@@ -257,7 +257,7 @@ STILL TO COME
 \begin{frame}\frametitle{Batch systems: concepts and unique features}
 
 \begin{itemize}
-	\item 	Start point, an end point, and time-based evolution of tags (variables) in between
+	\item 	Start point, an end point, and time-based evolution of tags (variables) in between 
 	
 	\item 	Operate essentially in open-loop i.t.o. final quality attributes (FQAs).  Basic, low-level feedback. \pause
 	
@@ -270,7 +270,7 @@ STILL TO COME
 			
 	\item	Sequenced very accurately
 	
-	\item	Phase-based sequencing \pause
+	\item	Phase-based sequencing
 
 \end{itemize}
 \end{frame}
@@ -279,15 +279,14 @@ STILL TO COME
 
 \begin{itemize}
 	
-
-	\item	Nonlinear relationship between variables; relationship changes with time
+	\item	Nonlinear relationship between variables; relationship changes with time \pause
 	
 	\item	Poor mechanistic models available (understandable)
 	
 			\begin{itemize}
 				\item	continuous: one or two things happening all the time
 				\item	batch: series of phases/events and relationships differ between (and within!) phases
-			\end{itemize}
+			\end{itemize} \pause
 			
 	\item 	Past history within a batch affects the future
 	
@@ -300,9 +299,220 @@ STILL TO COME
 \end{itemize}
 \end{frame}
 
-\begin{frame}\frametitle{Batch systems: data representation (Excel, MATLAB)}
-	TODO
+\begin{frame}\frametitle{Batch systems: terminology for these notes}
+
+\begin{description} 
+	
+	\item[ \( N \): number of batches] 
+	
+		\begin{itemize}
+			\item	literature uses \( I \)
+		\end{itemize}
+		
+	\item[\( K \): number of tags] 
+	
+		\begin{itemize}
+			\item	 literature uses \( J \)
+		\end{itemize}
+	
+	\item[\( J \): number of time steps, ] 
+	
+		\begin{itemize}
+			\item	 literature uses \( K \)
+		\end{itemize}
+\end{description}
+
+We aim for consistency with general latent variable methods: \( N \times K \times J \)
+
+\todo{4. Batch figure}
 \end{frame}
+
+\begin{frame}\frametitle{Batch systems: data representation (Excel, MATLAB)}
+
+When retrieving batch data from computerized systems:
+\begin{itemize}
+	\item	One batch per sheet in a spreadsheet, with batch ID
+			
+			\includegraphics[scale=0.75]{images/batches-in-sheets.png}
+	
+	\item	One batch per CSV file
+	
+	\item	Stacked batches in a single file (common)
+	
+			\begin{itemize}
+				\item	unaligned data must also include a batch ID column
+				
+				\item	if phases, also include a phase ID column within each batch (not shown)
+			\end{itemize}
+	
+			\todo{5. Stacked batches example}
+\end{itemize}
+MATLAB can handle all these formats
+\end{frame}
+
+\begin{frame}\frametitle{Batch systems: data representation (data cubes)}
+	
+	\begin{itemize}
+		\item	It is very common that the time-dimension, \( J \), is unequal				
+	\end{itemize}
+	
+	\todo{6. Ragged cube}
+	
+	We deal later with alignment (equalizing the time-dimension for all batches) 
+\end{frame}
+
+\begin{frame}\frametitle{Batch systems: visualize the trajectory data}
+	
+	\begin{columns}
+		\column{.40\textwidth}
+			\alert{\textbf{Unaligned data} }
+ 			\vfill
+			\includegraphics[height=0.8\textheight]{images/unaligned-trajectories-many-batches.png}
+			% From Cecilia Rodrigues thesis, used with permission (see gmail email in February 2011)
+		
+		\column{.60\textwidth}
+			\alert{\textbf{Aligned data}}
+			\vfill
+			\includegraphics[height=0.8\textheight]{images/aligned-trajectories-many-batches-yeast.png}
+			% Using rev 85:95b49ee15280 			
+			% data = load('/Users/kevindunn/ConnectMV/Courses/Batch/datasets/yeast/yeast-data.mat');
+			% b.tagNames = {'Ethanol', 'Temperature', 'Molasses', 'NH3 in feed', ...
+			%               'Air flow', 'Tank level', 'pH'};
+			% b.batchnames = {'rB','rC','rI','rM','rN','rQ','rR','rT','rV','rX','rZ', ...
+			%                'ra','rb_1','rc_1','rd','re','rf','rg','rh','ri_1','nA', ...
+			%                'tD','nG','nH','tJ','nL','nO','tP','nU','nY','rj','rk','rl'};
+			% b.nBatches = 33;
+			% batch_X = block(data.X, 'X', 'batch', 'tagNames', b.tagNames, 'nBatches', b.nBatches);
+			% plot(batch_X, 'raw', 2, 3) % but used a limited set
+	\end{columns}
+	\todo{Add software instruction}	
+\end{frame}
+
+%-------------------------------------------------
+\section{Batch analysis using feature extraction}
+%-------------------------------------------------
+
+\begin{frame}\frametitle{Feature extraction methods: overview}
+
+\begin{itemize}
+	\item	Unaligned data can be a challenge (more later).
+	
+	\item	One alternative to alignment, if we want to get started right away: 
+	
+			\begin{itemize}
+				\item	{\color{myOrange}{\emph{extract features}}} from each phase in each batch
+				
+				\item	assemble features within a row
+				
+				\item	build ordinary PCA on \( \mathbf{X_f} \) or PLS: \( \left\{ \mathbf{Z} \,\,\text{and}\,\, \mathbf{X_f}\right\} \stackrel{\text{PLS}}{\longmapsto} \mathbf{Y} \)
+			\end{itemize}
+			
+			\todo{8. Features}
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Which features to extract}
+
+\begin{itemize}
+	\item	Extract {\color{myGreen}{\emph{within each phase}}} or within {\color{myGreen}{\emph{specified windows}}}. 
+	
+	\item	Extract for one, some, or \textbf{all} tags:
+\end{itemize}\pause
+
+\begin{itemize}
+	\item	average value \hfill {\color{myOrange} $\leftarrow$ easiest, most useful feature}
+	\item 	median value
+	\item	integrated area under a tag (often makes engineering sense)
+	\item	standard deviation, (useful if tag should be constant)
+	\item	slope of curve\pause
+	\item	energy or mass balance calculation over a phase
+	 		\begin{itemize}
+	 			\item	e.g. heat released by a reaction should be taken up by the cooling water
+	 			\item	an imbalance can point out a problematic batch
+	 		\end{itemize} \pause
+	\item	value of a trajectory at start/end of phase
+	\item	total time for a phase to complete (goes into \( \mathbf{Z} \))
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{How to use feature-based models}
+
+\begin{itemize}
+	\item	Many features extracted: often \( \sim \) 80 to 100 columns; many are not useful
+	
+	\item	Used in an ordinary PCA or PLS.  All the usual tools apply:
+	
+			\begin{itemize}
+				\item	VIP: finds most import variables for explaining FQAs \( (\mathbf{Y}) \)
+				
+				\item	loadings and weights: used to interpret any clusters in the scores
+				
+				\item	\( R^2 \) per variable, small weights: eliminate less useful features
+			\end{itemize}\pause
+	
+	\item	Learn about the batch: {\small e.g.: variability in cooling water temperature related to poor FQA}
+	
+	\item	Troubleshooting an unusual batch 
+
+	\item	By extension, use troubleshooting information to improve future batches \pause
+	
+	\item	Can be used for monitoring: we'll come back to this
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Disadvantages of feature-based models}
+
+\begin{itemize}
+	\item	Smoothly varying trajectories within a phase
+	
+			\begin{itemize}
+				\item	no distinct features and hard to quantify
+			\end{itemize}
+			
+		\todo{9. Nylon trajectories}
+	
+	\item	Depends on engineer's prior knowledge
+	
+	\item	Subtle defects and broken correlations between variables 
+	
+			\begin{itemize}
+				\item	hard/impossible to detect and quantify
+			\end{itemize}
+			
+			\todo{10. plot of subtle defect }
+
+	\item	Feature value may not exist in an abnormal batch: so it's missed
+	
+\end{itemize}
+\end{frame}
+\item 
+
+\begin{frame}\frametitle{Class example: using feature-based models}
+
+\begin{itemize}
+	\item	Features already extracted
+	
+	\item	This batch process works well, because there are 4 distinct phases and ``sharp'' trajectories
+	
+			\todo{11. FMC raw data for 1 batch}
+	
+	\item	Features:
+	
+			\begin{itemize}
+				\item	\todo{LIST OF FEATURES}
+			\end{itemize}
+\end{itemize}
+
+\todo{12. FMC features: VIP plot}
+
+\todo{13: FMC features: score plot}
+
+\todo{Rest of FMC example case study here}
+
+\end{frame}
+%-------------------------------------------------
+\section{Batch analysis via direct PCA and PLS}
+%-------------------------------------------------
 
 \begin{frame}\frametitle{Batch systems: simple definition}
 
@@ -355,7 +565,6 @@ In \textbf{batch systems}: relationship between variables \alert{changes during 
 \end{frame}
 
 \begin{frame}\frametitle{Batch systems: changing relationship}
-
 \begin{enumerate}
 	\setcounter{enumi}{2}
 	\item 	Predictive modelling is harder
@@ -377,41 +586,6 @@ In \textbf{batch systems}: relationship between variables \alert{changes during 
 \end{frame}
 
 
-
-%-------------------------------------------------
-\section{Batch analysis using feature extraction}
-%-------------------------------------------------
-
-STILL TO COME
-
-%-------------------------------------------------
-\section{Batch analysis via direct PCA and PLS}
-%-------------------------------------------------
-
-\begin{frame}\frametitle{LVM for batch processes: terminology}
-
-\begin{description} 
-	
-	\item[\color{myGreen}{\textbf{Lack of stability}}] 
-	
-		\begin{itemize}
-			\item	Reference data (phase I) is representative of normal operation
-			
-			\item	but if process has shifted too much, monitoring will raise too many false alarms.
-			
-			\item	If something major has changed: acquire new data and rebuild model.
-		\end{itemize}
-		
-	\item[\color{myGreen}{\textbf{Unobservable events}}] 
-	
-		\begin{itemize}
-			\item Events you want to detect must be \emph{detectable} in the raw data.
-		
-			\item	Not all quality-related problems are observable in the data.
-		\end{itemize}
-		
-\end{description}
-\end{frame}
 %-------------------------------------------------
 \section{Batch Monitoring}
 %-------------------------------------------------
@@ -435,6 +609,33 @@ STILL TO COME
 			\item 	When does LVM monitoring fail?
 		\end{itemize}
 \end{enumerate}
+\end{frame}
+
+\begin{frame}[label=featuremonitoring]\frametitle{Feature-based monitoring}
+	
+	\begin{itemize}
+		\item	\textbf{Advantage}: avoids alignment issues
+		
+		\item	\textbf{Disadvantage}: 
+		
+				\begin{itemize}
+					\item	have to wait till end of each phase
+					
+					\item	not sensitive to subtle faults (see earlier notes on feature extraction)
+				\end{itemize}\pause
+	\end{itemize}
+	
+	{\color{myOrange}{Approach}}
+	\begin{itemize}
+		\item	We've extracted features from the (unaligned) trajectories
+		
+		\item	Use LVM to reduce the number of features to those that are meaningful \pause
+		
+		\item	At the end of each phase: calculate features and monitor using usual tools: \( T^2 \) and SPE and their contribution plots
+		
+		\item	Use missing data handling methods for features not yet available
+		
+	\end{itemize}
 \end{frame}
 
 \begin{frame}\frametitle{Multiblock monitoring: what goes in \( Z \)?}
@@ -506,8 +707,6 @@ Any relevant information that is constant over the batch
 	
 \end{enumerate}
 \end{frame}
-
-
 
 \end{document}
 
