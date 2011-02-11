@@ -1,0 +1,52 @@
+
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts,euscript,mathrsfs,wasysym,textcomp}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{multimedia}
+\usepackage{fancybox}
+\usepackage{psfrag}
+\usepackage{listings}
+\usepackage{pdfsync} % For compiling with TextMate
+
+\usetheme{default} 
+\setbeamertemplate{navigation symbols}{}          % suppress all navigation symbols
+\setbeamertemplate{blocks}[rounded][shadow=true]  % use rounded blocks (boxes), with shadows
+
+% Show page numbers on slides
+\setbeamertemplate{footline}{\begin{beamercolorbox}[right]{section in head/foot}\insertpagenumber~~~ \vskip5pt \end{beamercolorbox}}
+
+\setbeamercovered{transparent} 
+
+\hypersetup{colorlinks        = true,    
+			linkcolor         = blue,    
+			linkbordercolor   = {1 0 0},    
+			urlcolor          = cyan,    
+			bookmarks         = {true,},    
+			bookmarksopen     = {true,},    
+			bookmarksnumbered = {false,},    
+			pdftitle          = {ConnectMV Courses},    
+			pdfsubject        = {ConnectMV Courses},    
+			pdfauthor         = {Kevin Dunn, ConnectMV},    
+			pdfproducer       = {LaTeX, wiki2beamer, beamer, BeamerPDF},    
+			pdfkeywords       = http://connectmv.com/,
+		}
+\usepackage{pgfpages}
+
+\makeatletter
+\def\hlinewd#1{%
+\noalign{\ifnum0=`}\fi\hrule \@height #1 %
+\futurelet\reserved@a\@xhline}
+\makeatother
+
+\definecolor{myGreen}{rgb}{0.,0.4,0.}
+\definecolor{myOrange}{rgb}{1.,0.5,0.}
+\definecolor{myBlue}{rgb}{0.0,0.1,0.9}
+\definecolor{myRed}{rgb}{1.0,0.0,0.0}
+
+% Some definitions
+\newcommand{\defi}{\stackrel{\Delta}{=}}  % define
+\newcommand{\transp}[1]{\ensuremath{{#1}^\textnormal{\textsf{T}}}}  % transpose
+\newcommand{\RR}{\textnormal{\textsf{I}\!\textsf{R}}}  % Real number
+\newcommand{\En}[1]{\ensuremath{\RR^{#1}}}             % Real number raised to a power
+
