@@ -244,9 +244,65 @@
 \end{frame}
 
 %-------------------------------------------------
+\section{General multivariate review}
+%-------------------------------------------------
+
+STILL TO COME
+
+%-------------------------------------------------
 \section{Batch systems}
 %-------------------------------------------------
 % Related concepts: phases, Z, trajectories, alignment, recipes, operators, manual steps, unfolding, charge reactor
+
+\begin{frame}\frametitle{Batch systems: concepts and unique features}
+
+\begin{itemize}
+	\item 	Start point, an end point, and time-based evolution of tags (variables) in between
+	
+	\item 	Operate essentially in open-loop i.t.o. final quality attributes (FQAs).  Basic, low-level feedback. \pause
+	
+	\item 	Quality measurements made afterwards, usually in a lab
+	
+			\begin{itemize}
+				\item	used to decide batch disposition
+				\item	often used to adjust next batch (batch-to-batch control)
+			\end{itemize}\pause
+			
+	\item	Sequenced very accurately
+	
+	\item	Phase-based sequencing \pause
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Batch systems: concepts and unique features}
+
+\begin{itemize}
+	
+
+	\item	Nonlinear relationship between variables; relationship changes with time
+	
+	\item	Poor mechanistic models available (understandable)
+	
+			\begin{itemize}
+				\item	continuous: one or two things happening all the time
+				\item	batch: series of phases/events and relationships differ between (and within!) phases
+			\end{itemize}
+			
+	\item 	Past history within a batch affects the future
+	
+			\begin{itemize}
+				\item	initial conditions: affect trajectories and FQAs								
+				\item	trajectory changes from operator affect FQAs
+				\item	actions taken can affect some period or all of batch, or,
+				\item	even have no effect - relevant when monitoring a batch
+			\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Batch systems: data representation (Excel, MATLAB)}
+	TODO
+\end{frame}
 
 \begin{frame}\frametitle{Batch systems: simple definition}
 
@@ -304,7 +360,7 @@ In \textbf{batch systems}: relationship between variables \alert{changes during 
 	\setcounter{enumi}{2}
 	\item 	Predictive modelling is harder
 
-		\todo{3. figure of batch with uncertain Y}	
+		\todo{3. figure of batch with uncertain Y}
 		
 		\begin{itemize}
 			\item 	What do we use as the \( \mathbf{Y} \) matrix in this case?
@@ -317,6 +373,101 @@ In \textbf{batch systems}: relationship between variables \alert{changes during 
 				\item 	There are some issues with this  (alignment, real-time monitoring)
 				\item 	In general, they can be addressed effectively
 			\end{itemize}
+\end{enumerate}
+\end{frame}
+
+
+
+%-------------------------------------------------
+\section{Batch analysis using feature extraction}
+%-------------------------------------------------
+
+STILL TO COME
+
+%-------------------------------------------------
+\section{Batch analysis via direct PCA and PLS}
+%-------------------------------------------------
+
+STILL TO COME
+
+%-------------------------------------------------
+\section{Batch Monitoring}
+%-------------------------------------------------
+
+\begin{frame}\frametitle{Batch monitoring overview}
+
+\begin{enumerate}
+	\item 	Univariate process monitoring recap
+	
+	\item	Multivariate process monitoring recap
+	
+	\item	Batch monitoring
+	
+		\begin{itemize}
+			\item	feature-based monitoring			
+			\item	building the monitoring model for real-time use
+			\item	monitoring for acceptance / end-of-batch release
+			\item	endpoint detection monitoring
+			\item	multiblock monitoring: using information in \( Z \)			
+			\item	alignment issues
+			\item 	When does LVM monitoring fail?
+		\end{itemize}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}\frametitle{Multiblock monitoring: what goes in \( Z \)?}
+
+\begin{itemize}
+	\item	
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}\frametitle{When does LVM monitoring fail?}
+
+\begin{description} 
+	
+	\item[\color{myGreen}{\textbf{Lack of stability}}] 
+	
+		\begin{itemize}
+			\item	Reference data (phase I) is representative of normal operation
+			
+			\item	but if process has shifted too much, monitoring will raise too many false alarms.
+			
+			\item	If something major has changed: acquire new data and rebuild model.
+		\end{itemize}
+		
+	\item[\color{myGreen}{\textbf{Unobservable events}}] 
+	
+		\begin{itemize}
+			\item Events you want to detect must be \emph{detectable} in the raw data.
+		
+			\item	Not all quality-related problems are observable in the data.
+		\end{itemize}
+		
+\end{description}
+\end{frame}
+
+%-------------------------------------------------
+\section{Summary so far}
+%-------------------------------------------------
+
+\begin{frame}\frametitle{Value from batch process data}
+\begin{enumerate}
+	\item 	Learning more / confirming relationships
+		
+			\begin{itemize}
+				\item 	understand between batch variation (overall scores, \( T^2 \), and SPE)
+				\item 	understand within batch variation (instantaneous scores, \( T^2 \), and SPE)
+			\end{itemize}
+			
+	\item 	Troubleshoot problems within a batch
+	\item 	Optimize and improve: possible, but less likely in pharmaceutical applications
+	\item 	Predictions: final quality attributes, endpoint
+	\item 	Monitoring: can allow for early release to next stage
+	
 \end{enumerate}
 \end{frame}
 
