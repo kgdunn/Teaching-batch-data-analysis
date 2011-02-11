@@ -388,8 +388,30 @@ STILL TO COME
 \section{Batch analysis via direct PCA and PLS}
 %-------------------------------------------------
 
-STILL TO COME
+\begin{frame}\frametitle{LVM for batch processes: terminology}
 
+\begin{description} 
+	
+	\item[\color{myGreen}{\textbf{Lack of stability}}] 
+	
+		\begin{itemize}
+			\item	Reference data (phase I) is representative of normal operation
+			
+			\item	but if process has shifted too much, monitoring will raise too many false alarms.
+			
+			\item	If something major has changed: acquire new data and rebuild model.
+		\end{itemize}
+		
+	\item[\color{myGreen}{\textbf{Unobservable events}}] 
+	
+		\begin{itemize}
+			\item Events you want to detect must be \emph{detectable} in the raw data.
+		
+			\item	Not all quality-related problems are observable in the data.
+		\end{itemize}
+		
+\end{description}
+\end{frame}
 %-------------------------------------------------
 \section{Batch Monitoring}
 %-------------------------------------------------
@@ -405,7 +427,7 @@ STILL TO COME
 	
 		\begin{itemize}
 			\item	feature-based monitoring			
-			\item	building the monitoring model for real-time use
+			\item	building the monitoring model for real-time use (selecting phase I data)
 			\item	monitoring for acceptance / end-of-batch release
 			\item	endpoint detection monitoring
 			\item	multiblock monitoring: using information in \( Z \)			
@@ -417,13 +439,27 @@ STILL TO COME
 
 \begin{frame}\frametitle{Multiblock monitoring: what goes in \( Z \)?}
 
+\begin{block}{}
+Any relevant information that is constant over the batch 
+\end{block}
+
 \begin{itemize}
-	\item	
+	\item	feed stock quality and composition (your lab values, supplier's spec sheet)	
+	\item	idle time between phases / initial setup time
+	\item	summary information of upstream operations
+			\begin{itemize}
+				\item	averages				
+				\item	latent variable summary: scores
+			\end{itemize}
+	\item	desired recipe	
+	\item	alignment information from \( \mathbf{X}_\text{batch} \)
+	\item	operator or shift information (coded)
+	\item	day of batch, month (e.g. can show a seasonal effect)
+	\item	raw material supplier (coded)
+	\item	properties in batch tank after adding material: pH, NIR spectra, colour, temperature
+	\item	ambient conditions: temperature, humidity, and so on
 \end{itemize}
 \end{frame}
-
-
-
 
 \begin{frame}\frametitle{When does LVM monitoring fail?}
 
