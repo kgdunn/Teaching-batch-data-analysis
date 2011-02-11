@@ -248,22 +248,77 @@
 %-------------------------------------------------
 % Related concepts: phases, Z, trajectories, alignment, recipes, operators, manual steps, unfolding, charge reactor
 
-\begin{frame}\frametitle{Batch systems}
-
+\begin{frame}\frametitle{Batch systems: simple definition}
 
 \begin{exampleblock}{Simplest definition}
 \centering{\large{\textbf{A batch system}: group of the \alert{\emph{same variables}}, gathered over a period of \alert{\emph{time}}}}
 \end{exampleblock}
 	
-Why not just use ordinary PCA or PLS?
+\todo{1. image of batch reactor system (Cecilia thesis?)}
 
-TODO(KGD): IMAGE of ordinary X-block here
+\end{frame}	
 
-\vspace{1cm}
+\begin{frame}\frametitle{Batch systems: changing relationship}
 
+\textbf{Batch system}: group of the \emph{same variables}, gathered over a period of \emph{time}.  Why not just use ordinary PCA or PLS as shown here?
+
+\todo{2. add ordinary X-matrix}
+
+\begin{itemize}
+	\item 	PCA is invariant to row order (can shuffle rows, still get same model).  PCA will:
+	\begin{itemize}
+		\item 	explain how rows are related to each other
+		\item 	each row is assumed independent of the others
+		\item 	summarize relationship between variables (columns)
+	\end{itemize}
+\end{itemize}
+
+\begin{exampleblock}{Key issue}
+In \textbf{batch systems}: relationship between variables \alert{changes during the batch}
+\end{exampleblock}
 \end{frame}
 
+\begin{frame}\frametitle{Batch systems: changing relationship}
 
+\begin{enumerate}
+	\item Relationship between variables change within a batch 
+			\begin{itemize}
+				\item 	Entry and exit temperatures in a batch dryer correlate (move together) at the end of the batch. 
+				\item 	At start of the batch there is little relationship: heat used to evaporate moisture	
+			\end{itemize}\pause
+
+	
+	\item Past history of a batch affects future behaviour (``integrating system'')
+	
+			\begin{itemize}
+				\item 	Unfold batch data as shown above: cannot capture that ``past effect'' on future rows.  Why?
+				\item  	Recall: each row is independent in PCA and PLS
+			\end{itemize}
+
+\end{enumerate}
+\end{frame}
+
+\begin{frame}\frametitle{Batch systems: changing relationship}
+
+\begin{enumerate}
+	\setcounter{enumi}{2}
+	\item 	Predictive modelling is harder
+
+		\todo{3. figure of batch with uncertain Y}	
+		
+		\begin{itemize}
+			\item 	What do we use as the \( \mathbf{Y} \) matrix in this case?
+			\item 	Many elaborate schemes proposed in literature.			
+		\end{itemize}
+		
+	\item 	Simple solution: arrange data so that each batch is within a row
+	
+			\begin{itemize}
+				\item 	There are some issues with this  (alignment, real-time monitoring)
+				\item 	In general, they can be addressed effectively
+			\end{itemize}
+\end{enumerate}
+\end{frame}
 
 
 
