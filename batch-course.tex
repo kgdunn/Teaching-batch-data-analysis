@@ -349,17 +349,81 @@ These notes are based on ConnectMV's experience with batch systems, but also the
 \begin{frame}\frametitle{Quick review of multivariate concepts: PCA}
 
 	\begin{block}{Mathematical objective}
-		PCA: find me the best summary of my data, \( \mathbf{X} \), with the fewest number of summary variables, called scores, \( \mathbf{T} \)
+		PCA: find me the best summary of my data, \( \mathbf{X} \), with the fewest number of summary variables, called scores, \( \mathbf{T} \).
 	\end{block}
 	
-	
+	\vspace{18pt}
+
 	\begin{center}
 		\includegraphics[width=8cm]{images/reduce-data-X-to-scores-T.png}
 	\end{center}
 	
-	
 \end{frame}
 
+\begin{frame}\frametitle{What does PCA do?}
+
+	It finds directions that best explain the data.  Also called
+	
+	\begin{itemize}
+		\item  	``directions of greatest variance''
+		\item	``loadings and scores''
+		\item	``components''
+		\item	``latent variables'' (LVs)
+	\end{itemize}
+
+	\begin{center}
+		\includegraphics[width=\textwidth]{images/geometric-PCA-3-and-4-centered-with-first-component.png}
+		% images/geometric-interpretation-of-PCA.svg
+	\end{center}
+	
+	PCA finds the LVs so that LV1 explains more than LV2, which explains more than LV3, \emph{etc}.
+\end{frame}
+
+\begin{frame}\frametitle{What is a latent variable?}
+
+	\textbf{\emph{Example}}: your health
+	
+	\begin{itemize}
+		\item	There isn't a single measurement of ``health''.  It's an abstract concept: 
+		
+				\begin{itemize}
+					\item	blood pressure, cholesterol, blood sugar, temperature, heart rate \emph{etc}
+				\end{itemize}				
+				
+		\item	combine these values in some way (by a trained professional) to come up with some level of ``health''
+	\end{itemize}
+	
+	\pause
+	
+	{\color{myGreen}{We can do this with any system!}}
+\end{frame}
+
+\begin{frame}\frametitle{What is a latent variable?}
+
+	\textbf{\emph{Example}}: room temperature measured at 4 points
+	
+	\begin{center}
+		\includegraphics[width=6cm]{images/room-temperature-plots.jpg}
+		% images/room-temperature-plots.py ---> PNG ---> cropped ---> saved as JPG
+	\end{center}
+	
+	\begin{itemize}
+		\item	a single phenomenon occurring, so \textbf{not 4 independent}  measurements
+		
+		\item	can be reduced down to 1 latent variable
+		
+				\begin{itemize}
+					\item	just use the average
+					
+					\item	that's exactly what PCA does in this example
+				\end{itemize}
+		
+	\end{itemize}
+	
+	
+	% FUTURE: come back to pencil notes in Red McMaster Sketchbook binder and add the part that shows the weighted sum calculation for the scores
+
+\end{frame}
 
 %-------------------------------------------------
 \section{Batch systems}
@@ -600,7 +664,6 @@ MATLAB can handle all these formats
 	
 \end{itemize}
 \end{frame}
-\item 
 
 \begin{frame}\frametitle{Class example: using feature-based models}
 
@@ -625,6 +688,7 @@ MATLAB can handle all these formats
 \todo{Rest of FMC example case study here}
 
 \end{frame}
+
 %-------------------------------------------------
 \section{Batch analysis via direct PCA and PLS}
 %-------------------------------------------------
@@ -708,7 +772,6 @@ MATLAB can handle all these formats
 			\end{itemize}
 \end{enumerate}
 \end{frame}
-
 
 %-------------------------------------------------
 \section{Batch Monitoring}
