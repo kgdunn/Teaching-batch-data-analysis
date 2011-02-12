@@ -261,10 +261,55 @@
 		
 		\item	Alignment looks pretty good (process is well controlled)
 		
-		\item	Some time regions are noisy: ``Flow-1'' and ``Flow-2''
+		\item	Some periods are noisy: ``Flow-1'' and ``Flow-2''
 	\end{itemize}
-
 \end{frame}
+
+\begin{frame}\frametitle{DuPont Nylon example: initial PCA}
+	\begin{itemize}
+
+		\item	Just start with 2 components initially
+		
+				\begin{itemize}					
+					\item	no cross-validation, just get a ``feel'' for the data
+					\item	\( R^2_X = [38.28\%, 17.58\%]\), or cumulatively: 55.9\%
+				\end{itemize}
+		
+		\item	Score plot:
+				
+				\begin{columns}
+					\column{0.8\textwidth}
+						\begin{center}
+							\includegraphics[width=0.8\textwidth]{images/dupont/dupont-raw-score-plot.jpg}
+							% batch_PCA = lvm({'X', batch_X}, 2);
+							% plot(batch_PCA, 'scores', {'labels'})
+						\end{center}
+						
+					\column{0.4\textwidth}
+						\begin{itemize}
+							\item	Batches 50 to 55 unusual
+							
+							\item	Distorted the model							
+						\end{itemize}
+				\end{columns}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{DuPont Nylon example: initial PCA}
+	\begin{itemize}
+		\item	SPE plot
+	\end{itemize}
+	
+	\begin{center}
+		\includegraphics[width=\textwidth]{images/dupont/dupont-raw-SPE.jpg}
+		% batch_PCA = lvm({'X', batch_X}, 2);
+		% plot(batch_PCA, 'spe', {'labels'})
+	\end{center}
+\end{frame}
+
+
+
+
 
 \begin{frame}\frametitle{DuPont Nylon example: Summary}
 	
