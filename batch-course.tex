@@ -134,6 +134,23 @@
 %-------------------------------------------------
 
 %-------------------------------------------------
+% Sources and resources
+%-------------------------------------------------
+\begin{frame}\frametitle{Sources and resources}
+
+These notes are based on ConnectMV's experience with batch systems, but also the extensive research into batch data analysis done at McMaster University
+
+\begin{enumerate}
+
+	\item	Nomikos, ``Statistical Process Control of Batch Processes'', Ph.D thesis, McMaster University, 1995, {\scriptsize http://digitalcommons.mcmaster.ca/opendissertations/1667/}
+	
+	\item	Garcia-Mu\~noz, ``Batch process improvement using latent latent variable methods'', Ph.D thesis, McMaster University, 2004 {\scriptsize http://digitalcommons.mcmaster.ca/opendissertations/1596/}
+	
+	\item	Wold, Kettaneh-Wold, MacGregor, Dunn, ``Batch Process Modeling and MSPC'', \emph{Comprehensive Chemometrics}, 2009, {\scriptsize http://dx.doi.org/10.1016/B978-044452701-1.00108-3}
+\end{enumerate}
+\end{frame}
+
+%-------------------------------------------------
 \section{What do we learn from our data?}
 %-------------------------------------------------
 
@@ -274,7 +291,26 @@
 \section{General multivariate review}
 %-------------------------------------------------
 
-STILL TO COME
+\begin{frame}\frametitle{Quick review of multivariate concepts}
+
+\begin{itemize}
+	\item	High dimensionality in data we collect, e.g. NIR spectra
+			\begin{center}
+				\includegraphics[width=5cm]{images/high-dimensionality-data.jpg}
+			\end{center}
+			
+			
+	\item	high correlation between the variables (duplicate info)
+	
+			\begin{columns}
+				\begin{center}
+					\includegraphics[width=5cm]{images/high-dimensionality-data.jpg}
+				\end{center}
+				
+			\end{columns}
+			
+\end{itemize}
+\end{frame}
 
 %-------------------------------------------------
 \section{Batch systems}
@@ -351,7 +387,10 @@ STILL TO COME
 
 We aim for consistency with general latent variable methods: \( N \times K \times J \)
 
-\todo{4. Batch figure}
+\begin{center}
+	\includegraphics[width=7.2cm]{images/batch-data-cube.png}
+\end{center}
+
 \end{frame}
 
 \begin{frame}\frametitle{Batch systems: data representation (Excel, MATLAB)}
@@ -600,20 +639,23 @@ MATLAB can handle all these formats
 \begin{frame}\frametitle{Batch systems: changing relationship}
 \begin{enumerate}
 	\setcounter{enumi}{2}
-	\item 	Predictive modelling is harder
+	\item 	Predictive modelling is harder by unfolding this way
 
-		\todo{3. figure of batch with uncertain Y}
+			\begin{center}
+				\includegraphics[width=3.5cm]{images/batch-illustrate-unusual-unfolding-with-Y.png}
+			\end{center}
+			
 		
-		\begin{itemize}
-			\item 	What do we use as the \( \mathbf{Y} \) matrix in this case?
-			\item 	Many elaborate schemes proposed in literature.			
-		\end{itemize}
+			\begin{itemize}
+				\item 	What do we use as the \( \mathbf{Y} \) matrix in this case?
+				\item 	Many elaborate schemes proposed in literature.			
+			\end{itemize}
 		
 	\item 	Simple solution: arrange data so that each batch is within a row
 	
 			\begin{itemize}
 				\item 	There are some issues with this  (alignment, real-time monitoring)
-				\item 	In general, they can be addressed effectively
+				\item 	In general, these issues can be addressed effectively
 			\end{itemize}
 \end{enumerate}
 \end{frame}
