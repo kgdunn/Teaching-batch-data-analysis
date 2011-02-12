@@ -17,7 +17,7 @@
    sodipodi:docname="batch-data-layers-into-page-and-unfolded-aligned.svg"
    version="1.0"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
-   inkscape:export-filename="batch-data-layers-into-page-and-unfolded.png"
+   inkscape:export-filename="batch-data-layers-into-page-and-unfolded-aligned.png"
    inkscape:export-xdpi="200"
    inkscape:export-ydpi="200">
   <defs
@@ -115,7 +115,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
