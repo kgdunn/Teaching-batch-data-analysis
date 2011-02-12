@@ -726,7 +726,7 @@ MATLAB can handle all the formats shown above.
 \end{exampleblock}
 	
 \begin{center}
-\includegraphics[width=6cm]{images/batch-system.png}	
+	\includegraphics[width=6cm]{images/batch-system.png}	
 \end{center}
 
 \end{frame}	
@@ -801,17 +801,66 @@ MATLAB can handle all the formats shown above.
 
 \begin{frame}\frametitle{Analysis and learning from batch data}
 
-\begin{exampleblock}{Approach}
-Unfold the aligned batch data row wise, one batch per row, and use PCA and PLS directly.
-\end{exampleblock}
+	\begin{exampleblock}{Approach}
+	Unfold the aligned batch data row wise, one batch per row, and use PCA and PLS directly.
+	\end{exampleblock}
 
-\begin{center}
-	\includegraphics[width=6cm]{images/batch-system.png}	
-\end{center}
-
+	\begin{center}
+		\includegraphics[width=8cm]{images/batch-data-unfolding-X-only.png}	
+	\end{center}
 \end{frame}	
 
+\begin{frame}\frametitle{DuPont Nylon example: learning from new data}
 
+	\begin{itemize}
+		\item	Industrial data set of \( N = 55 \) batches from Nylon production
+		
+		\item	Temperature, pressure and flow rate variables: \( K = 10\)  batch tags
+		
+		\item	Batch duration about 2 hours (\( J=100 \) time intervals)
+		
+		\item	12 hours before lab values returned: batch-to-batch adjustment not possible
+		
+		\item	Known problems with batches: 40, 41, 42, 50, 51, 53, 54, 55
+	\end{itemize}
+	
+	
+\end{frame}
+
+\begin{frame}\frametitle{DuPont Nylon example: raw data}
+	{\color{myGreen}{Note}}: data were scaled for confidentiality
+	\begin{center}
+		\includegraphics[width=\textwidth]{images/dupont/dupont-raw-data-trajectories.png}
+	\end{center}
+	
+	\vspace{1cm}
+	\begin{itemize}
+		\item	Can see a few unusual batches: ``Temp-C1'' and ``Press-1''
+		
+		\item	Alignment looks pretty good (process is well controlled)
+		
+		\item	Some regions are noisy: ``Flow-1'' and ``Flow-2''
+	\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}\frametitle{DuPont Nylon example: Summary}
+	
+\begin{enumerate}
+	\item	Plot the trajectories
+	
+			\begin{itemize}
+				\item	Sometime outlier batches already detectable
+				
+				\item	Visualize how good your alignment is: do data need extra pretreatment?
+			\end{itemize}
+\end{enumerate}
+
+
+	
+\end{frame}
 
 %-------------------------------------------------
 \section{Batch monitoring}

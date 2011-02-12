@@ -9,8 +9,8 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="945.78003"
-   height="721.48999"
+   width="945.76001"
+   height="722.42999"
    id="svg2"
    sodipodi:version="0.32"
    inkscape:version="0.48.0 r9654"
@@ -110,9 +110,9 @@
      objecttolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.89880764"
-     inkscape:cx="474.29663"
-     inkscape:cy="356.41465"
+     inkscape:zoom="0.89420185"
+     inkscape:cx="469.38828"
+     inkscape:cy="358.06772"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -143,25 +143,25 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-39.677307,-9.5098902)">
+     transform="translate(-39.677307,-9.8949257)">
     <rect
-       style="fill:#43c4e8;fill-opacity:0.39599998;stroke:#000000;stroke-width:1.79760122;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       style="fill:#d5f2fa;fill-opacity:0.39607843;stroke:#000000;stroke-width:1.79760122;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect12426"
        width="158.20239"
        height="188.20239"
-       x="194.46782"
-       y="20.96431"
+       x="200.46782"
+       y="16.96431"
        rx="0"
        ry="0"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
     <rect
-       style="fill:#43c4e8;fill-opacity:0.39599998;stroke:#000000;stroke-width:2.25478864;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       style="fill:#d5f2fa;fill-opacity:0.39607843;stroke:#000000;stroke-width:2.25478864;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect12424"
        width="140.44334"
        height="188.40407"
-       x="106.67953"
-       y="173.69836"
+       x="114.30565"
+       y="174.40555"
        rx="0"
        ry="0"
        transform="matrix(0.786771,-0.617245,0,1,0,0)"
@@ -169,12 +169,12 @@
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
     <rect
-       style="fill:#43c4e8;fill-opacity:0.39607843;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       style="fill:#d5f2fa;fill-opacity:0.39607843;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect1956"
        width="158.20239"
        height="188.20239"
-       x="178.8988"
-       y="33.713562"
+       x="184.8988"
+       y="29.713562"
        rx="0"
        ry="0"
        inkscape:export-filename="rect12426.png"
@@ -182,7 +182,7 @@
        inkscape:export-ydpi="300" />
     <path
        style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#Arrow1Mstart);marker-mid:none;marker-end:none"
-       d="M 176.66269,19.23888 65.444499,105.34062"
+       d="M 182.66269,15.23888 71.444499,101.34062"
        id="path14276"
        sodipodi:nodetypes="cc"
        inkscape:export-filename="rect12426.png"
@@ -191,24 +191,24 @@
        inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
-       style="font-size:23.99999619px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial Italic"
-       x="48.009789"
-       y="115.80867"
+       style="font-size:24px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial Italic"
+       x="55.208874"
+       y="116.22504"
        id="text15345"
        sodipodi:linespacing="125%"
-       transform="matrix(0.798635,-0.601816,0.601816,0.798635,0,0)"
+       transform="matrix(0.79863486,-0.60181589,0.60181589,0.79863486,0,0)"
        inkscape:export-filename="rect12426.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"><tspan
          sodipodi:role="line"
          id="tspan15349"
-         x="48.009789"
-         y="115.80867">Time</tspan></text>
+         x="55.208874"
+         y="116.22504">Time</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-       x="-201.367"
-       y="56.856995"
+       x="-197.367"
+       y="62.856995"
        id="text15353"
        sodipodi:linespacing="125%"
        transform="matrix(0,-1,1,0,0,0)"
@@ -217,71 +217,71 @@
        inkscape:export-ydpi="300"><tspan
          sodipodi:role="line"
          id="tspan15357"
-         x="-201.367"
-         y="56.856995">Batches</tspan></text>
+         x="-197.367"
+         y="62.856995">Batches</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
-       d="m 63.181209,109.00666 0,190"
+       d="m 69.181209,105.00666 0,190"
        id="path15361"
        inkscape:export-filename="rect12426.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"
        inkscape:connector-curvature="0" />
     <rect
-       style="fill:#43c4e8;fill-opacity:0.39607843;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       style="fill:#d5f2fa;fill-opacity:0.39607843;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect2847"
        width="158.20239"
        height="188.20239"
-       x="137.5"
-       y="65.65979"
+       x="143.5"
+       y="61.65979"
        rx="0"
        ry="0"
        inkscape:export-filename="rect12426.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
     <rect
-       style="fill:#43c4e8;fill-opacity:0.39607843;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       style="fill:#d5f2fa;fill-opacity:0.39607843;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4619"
        width="158.20239"
        height="188.20239"
-       x="119.51686"
-       y="80.085327"
+       x="125.51686"
+       y="76.085327"
        rx="0"
        ry="0"
        inkscape:export-filename="rect12426.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
     <rect
-       style="fill:#43c4e8;fill-opacity:0.39607843;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       style="fill:#d5f2fa;fill-opacity:0.39607843;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4621"
        width="158.20239"
        height="188.20239"
-       x="100.59011"
-       y="94.478493"
+       x="106.59011"
+       y="90.478493"
        rx="0"
        ry="0"
        inkscape:export-filename="rect12426.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
     <rect
-       style="fill:#43c4e8;fill-opacity:0.39607843;stroke:#000000;stroke-width:1.79760122;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       style="fill:#d5f2fa;fill-opacity:0.39607843;stroke:#000000;stroke-width:1.79760122;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect2760"
        width="158.20239"
        height="188.20239"
-       x="84.079605"
-       y="107.9054"
+       x="90.079605"
+       y="103.9054"
        rx="0"
        ry="0"
        inkscape:export-filename="rect12426.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
     <rect
-       style="fill:#43c4e8;fill-opacity:0.39607843;stroke:#000000;stroke-width:2.25478864;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       style="fill:#d5f2fa;fill-opacity:0.39607843;stroke:#000000;stroke-width:2.25478864;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect12422"
        width="140.44334"
        height="188.40407"
-       x="307.50012"
-       y="297.16156"
+       x="315.12619"
+       y="297.86874"
        rx="0"
        ry="0"
        transform="matrix(0.786771,-0.617245,0,1,0,0)"
@@ -289,24 +289,25 @@
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
     <rect
-       style="fill:#43c4e8;fill-opacity:0.39732145;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       style="fill:#d5f2fa;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect5508"
        width="158.20239"
        height="188.20239"
-       x="258.5"
-       y="310.29761"
+       x="264.5"
+       y="-494.5"
        rx="0"
        ry="0"
        inkscape:export-filename="rect12426.png"
        inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300" />
+       inkscape:export-ydpi="300"
+       transform="scale(1,-1)" />
     <rect
-       style="fill:#43c4e8;fill-opacity:0.39607843;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       style="fill:#d5f2fa;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect5510"
        width="158.20239"
        height="188.20239"
-       x="439.29761"
-       y="309.5"
+       x="445.29761"
+       y="305.5"
        rx="0"
        ry="0"
        inkscape:export-filename="rect12426.png"
@@ -315,8 +316,8 @@
     <text
        xml:space="preserve"
        style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-       x="-632.86035"
-       y="61.675781"
+       x="-628.86035"
+       y="67.675781"
        id="text5518"
        sodipodi:linespacing="125%"
        transform="matrix(0,-1,1,0,0,0)"
@@ -325,11 +326,11 @@
        inkscape:export-ydpi="300"><tspan
          sodipodi:role="line"
          id="tspan5520"
-         x="-632.86035"
-         y="61.675781">Batches</tspan></text>
+         x="-628.86035"
+         y="67.675781">Batches</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
-       d="m 68,538.5 0,190"
+       d="m 74,534.5 0,190"
        id="path5522"
        inkscape:export-filename="rect12426.png"
        inkscape:export-xdpi="300"
@@ -338,8 +339,8 @@
     <text
        xml:space="preserve"
        style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-       x="337.86975"
-       y="409.91638"
+       x="343.86975"
+       y="405.91638"
        id="text5524"
        sodipodi:linespacing="125%"
        inkscape:export-filename="rect12426.png"
@@ -347,13 +348,13 @@
        inkscape:export-ydpi="300"><tspan
          sodipodi:role="line"
          id="tspan5265"
-         x="337.86975"
-         y="409.91638">Data at t=1</tspan></text>
+         x="343.86975"
+         y="405.91638">Data at t=1</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-       x="518.90857"
-       y="408.56702"
+       x="524.90857"
+       y="404.56702"
        id="text5532"
        sodipodi:linespacing="125%"
        inkscape:export-filename="rect12426.png"
@@ -361,15 +362,15 @@
        inkscape:export-ydpi="300"><tspan
          sodipodi:role="line"
          id="tspan5267"
-         x="518.90857"
-         y="408.56702">Data at t=2</tspan></text>
+         x="524.90857"
+         y="404.56702">Data at t=2</tspan></text>
     <rect
-       style="fill:#43c4e8;fill-opacity:0.39607843;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       style="fill:#d5f2fa;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect5514"
        width="158.20239"
        height="188.20239"
-       x="749.29761"
-       y="309.5"
+       x="755.29761"
+       y="305.5"
        rx="0"
        ry="0"
        inkscape:export-filename="rect12426.png"
@@ -377,7 +378,7 @@
        inkscape:export-ydpi="300" />
     <path
        style="fill:none;stroke:#505050;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:6, 2;stroke-dashoffset:0"
-       d="M 258,499 98,729"
+       d="M 264,495 104,725"
        id="path5544"
        inkscape:export-filename="rect12426.png"
        inkscape:export-xdpi="300"
@@ -385,7 +386,7 @@
        inkscape:connector-curvature="0" />
     <path
        style="fill:none;stroke:#505050;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:6, 2;stroke-dashoffset:0"
-       d="m 257.5,309.5 -160,230"
+       d="m 263.5,305.5 -160,230"
        id="path6433"
        inkscape:export-filename="rect12426.png"
        inkscape:export-xdpi="300"
@@ -393,7 +394,7 @@
        inkscape:connector-curvature="0" />
     <path
        style="fill:none;stroke:#505050;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:6, 2;stroke-dashoffset:0"
-       d="m 907.5,309.5 69.45382,230"
+       d="m 913.5,305.5 69.45382,230"
        id="path6435"
        sodipodi:nodetypes="cc"
        inkscape:export-filename="rect12426.png"
@@ -402,7 +403,7 @@
        inkscape:connector-curvature="0" />
     <path
        style="fill:none;stroke:#505050;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:6, 2;stroke-dashoffset:0"
-       d="m 908.5,498.5 69.45386,230"
+       d="m 914.5,494.5 69.45386,230"
        id="path6437"
        sodipodi:nodetypes="cc"
        inkscape:export-filename="rect12426.png"
@@ -410,12 +411,12 @@
        inkscape:export-ydpi="300"
        inkscape:connector-curvature="0" />
     <rect
-       style="fill:#43c4e8;fill-opacity:0.39599998;stroke:#000000;stroke-width:2.34584522;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       style="fill:#d5f2fa;fill-opacity:1;stroke:#000000;stroke-width:2.34584522;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect5516"
        width="876.85657"
        height="186.85655"
-       x="99.970497"
-       y="540.17291"
+       x="105.9705"
+       y="536.17291"
        rx="0"
        ry="0"
        inkscape:export-filename="rect12426.png"
@@ -423,7 +424,7 @@
        inkscape:export-ydpi="300" />
     <path
        style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
-       d="m 248.19756,207.74492 c 88.67515,0.33648 88.14372,101.05752 88.14372,101.05752"
+       d="m 254.19756,203.74492 c 88.67515,0.33648 88.14372,101.05752 88.14372,101.05752"
        id="path7400"
        sodipodi:nodetypes="cc"
        inkscape:export-filename="rect12426.png"
@@ -432,7 +433,7 @@
        inkscape:connector-curvature="0" />
     <path
        style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
-       d="m 268.93333,189.47872 c 185.24154,-0.471 250.26153,118.58794 250.26153,118.58794"
+       d="m 274.93333,185.47872 c 185.24154,-0.471 250.26153,118.58794 250.26153,118.58794"
        id="path9172"
        sodipodi:nodetypes="cc"
        inkscape:export-filename="rect12426.png"
@@ -441,7 +442,7 @@
        inkscape:connector-curvature="0" />
     <path
        style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
-       d="m 344.82448,129.48378 c 361.47347,-0.69839 488.35105,175.83878 488.35105,175.83878"
+       d="m 350.82448,125.48378 c 361.47347,-0.69839 488.35105,175.83878 488.35105,175.83878"
        id="path10059"
        sodipodi:nodetypes="cc"
        inkscape:export-filename="rect12426.png"
@@ -451,17 +452,17 @@
     <text
        xml:space="preserve"
        style="font-size:100px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-       x="129.56264"
-       y="237.79761"
+       x="135.56264"
+       y="233.79761"
        id="text2432"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan2434"
-         x="129.56264"
-         y="237.79761">X </tspan></text>
+         x="135.56264"
+         y="233.79761">X </tspan></text>
     <g
        id="g9779"
-       transform="translate(-77.960762,-5.2772903)">
+       transform="translate(-71.960762,-9.2772903)">
       <text
          xml:space="preserve"
          style="font-size:100px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
@@ -494,13 +495,13 @@
        inkscape:export-filename="rect12426.png"
        sodipodi:linespacing="125%"
        id="text5259"
-       y="408.56702"
-       x="824.90857"
+       y="404.56702"
+       x="830.90857"
        style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
        xml:space="preserve"><tspan
          sodipodi:role="line"
          id="tspan5269"
-         x="824.90857"
-         y="408.56702">Data at t=J</tspan></text>
+         x="830.90857"
+         y="404.56702">Data at t=J</tspan></text>
   </g>
 </svg>
