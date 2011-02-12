@@ -1,6 +1,8 @@
 \documentclass[handout, 12pt]{beamer}
 %\documentclass[11pt]{beamer}
 
+% \tiny\scriptsize\footnotesize\small\normalsize\large\Large\LARGE\huge\Huge
+
 \input{preamble.tex}
 \title[]{Latent Variable Methods for Batch Processes}
 \subtitle[]{Learning from data}
@@ -291,26 +293,73 @@ These notes are based on ConnectMV's experience with batch systems, but also the
 \section{General multivariate review}
 %-------------------------------------------------
 
-\begin{frame}\frametitle{Quick review of multivariate concepts}
+\begin{frame}\frametitle{Justification for latent variable methods}
 
-\begin{itemize}
+\begin{enumerate}
 	\item	High dimensionality in data we collect, e.g. NIR spectra
 			\begin{center}
-				\includegraphics[width=5cm]{images/high-dimensionality-data.jpg}
+				\includegraphics[width=6cm]{images/high-dimensionality-data.jpg}
 			\end{center}
 			
 			
-	\item	high correlation between the variables (duplicate info)
-	
+	\item	High correlation between the variables (duplicate info)
+			\vspace{6pt}
 			\begin{columns}
+				\column{.30\textwidth}
 				\begin{center}
-					\includegraphics[width=5cm]{images/high-dimensionality-data.jpg}
+					\includegraphics[width=3cm]{images/high-correlation-between-variables.png}
 				\end{center}
+				
+				\column{.7\textwidth}
+				Not a bad thing, but ordinary least squares cannot handle high correlations
+				\begin{itemize}
+					\item	we resort to variable selection					
+					\item	we risk omitting important variables
+					\item	using all data: get stronger signal from many noisy variables
+				\end{itemize}
 				
 			\end{columns}
 			
-\end{itemize}
+\end{enumerate}
 \end{frame}
+
+\begin{frame}\frametitle{Justification for latent variable methods}
+
+\begin{enumerate}
+	\setcounter{enumi}{2}
+	\item	Missing data
+	
+			\begin{center}
+				\includegraphics[width=6cm]{images/missing-data.png}
+			\end{center}
+			
+			Batch data sets: usually not an issue for complete, historical batches			
+			
+	
+	\item	Large number of samples
+	
+			\begin{itemize}
+				\item	modern computer hardware
+				
+				\item	smart algorithms (build models from smaller data groups)
+			\end{itemize} 
+\end{enumerate}
+\end{frame}
+
+\begin{frame}\frametitle{Quick review of multivariate concepts: PCA}
+
+	\begin{block}{Mathematical objective}
+		PCA: find me the best summary of my data, \( \mathbf{X} \), with the fewest number of summary variables, called scores, \( \mathbf{T} \)
+	\end{block}
+	
+	
+	\begin{center}
+		\includegraphics[width=8cm]{images/reduce-data-X-to-scores-T.png}
+	\end{center}
+	
+	
+\end{frame}
+
 
 %-------------------------------------------------
 \section{Batch systems}
