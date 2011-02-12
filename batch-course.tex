@@ -506,51 +506,77 @@ We aim for consistency with general latent variable methods: \( N \times K \time
 
 \end{frame}
 
-\begin{frame}\frametitle{Batch systems: data representation (Excel, MATLAB)}
+\begin{frame}\frametitle{Batch systems: data representation}
 
 When retrieving batch data from computerized systems:
-\begin{itemize}
+\begin{enumerate}
 	\item	One batch per sheet in a spreadsheet, with batch ID
 			
 			\includegraphics[scale=0.75]{images/batches-in-spreadsheets.png}
 	
 	\item	One batch per CSV file
-	
-	\item	Stacked batches in a single file (common)
-	
-			\begin{itemize}
-				\item	unaligned data must also include a batch ID column
-				
-				\item	if phases, also include a phase ID column within each batch (not shown)
-			\end{itemize}
-	
-			\todo{5. Stacked batches example}
-\end{itemize}
-MATLAB can handle all these formats
+\end{enumerate}
 \end{frame}
 
-\begin{frame}\frametitle{Batch systems: data representation (data cubes)}
+\begin{frame}\frametitle{Batch systems: data representation}
+
+\begin{enumerate}
+	\setcounter{enumi}{2}
+	\item	Stacked batches of equal duration in a single file
+
+			\begin{center}
+				\includegraphics[width=0.9\textwidth]{images/batch-data-layers-into-page-and-unfolded-aligned}
+			\end{center}
+					
+\end{enumerate}
+The extra batch ID column is optional.  Some batch software require the data input this way.
+\end{frame}
+
+\begin{frame}\frametitle{Batch systems: data representation}
+
+\begin{enumerate}
+	\setcounter{enumi}{3}
+	\item	Stacked, \textbf{but unaligned} batches, in a single file (common)
+			
+			\begin{columns}
+				\column{.3\textwidth}
+					\begin{itemize}
+						\item	must also include a batch ID column
+
+						\item	phased recipes: append a ``phase ID'' column within each batch (not shown)
+					\end{itemize}
+					
+				\column{0.7\textwidth}
+				
+					\begin{center}
+						\includegraphics[width=\textwidth]{images/batch-data-layers-into-page-and-unfolded.png}
+					\end{center}
+					
+			\end{columns}
+\end{enumerate}
+MATLAB can handle all the formats shown above.
+\end{frame}
+
+\begin{frame}\frametitle{Batch systems: data representation}
 	
 	\begin{itemize}
-		\item	It is very common that the time-dimension, \( J \), is unequal				
+		\item	It is very common that the time-dimension, \( J \), is unequal	
+		
+		\item	We deal later with alignment: equalizing the time-dimension for all batches
 	\end{itemize}
-	
-	\todo{6. Ragged cube}
-	
-	We deal later with alignment (equalizing the time-dimension for all batches) 
 \end{frame}
 
 \begin{frame}\frametitle{Batch systems: visualize the trajectory data}
 	
 	\begin{columns}
 		\column{.40\textwidth}
-			\alert{\textbf{Unaligned data} }
+			{\color{myOrange}{\textbf{Unaligned data}}}
  			\vfill
 			\includegraphics[height=0.8\textheight]{images/unaligned-trajectories-many-batches.png}
 			% From Cecilia Rodrigues thesis, used with permission (see gmail email in February 2011)
 		
 		\column{.60\textwidth}
-			\alert{\textbf{Aligned data}}
+			{\color{myOrange}{\textbf{Aligned data}}}
 			\vfill
 			\includegraphics[height=0.8\textheight]{images/aligned-trajectories-many-batches-yeast.png}
 			% Using rev 85:95b49ee15280 			
