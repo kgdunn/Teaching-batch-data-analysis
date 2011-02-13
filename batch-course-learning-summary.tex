@@ -1,0 +1,139 @@
+%!TEX root = batch-course.tex
+%-------------------------------------------------
+\section{What do we learn from our data?}
+%-------------------------------------------------
+
+\begin{frame}\frametitle{What do we learn from our data?}
+
+\begin{enumerate}
+	\item {\bf \color{myGreen}Improve/confirm} process understanding
+	
+		 How do we learn from our data?
+\begin{itemize}
+
+	\item	see which variables behave similarly (clustering) \pause
+	\item	confirm which phenomena have greatest effect in the data 
+	\begin{itemize}
+		\item	high variability appears in first LVs
+		\item	lower variability phenomena later
+	\end{itemize}\pause
+
+	\item	which variables have most strong influence on variability in that component
+	\begin{itemize}
+		\item variables with high loadings
+	\end{itemize}\pause
+
+	\item	interpret latent variables
+	\begin{itemize}
+		\item	sometimes we can
+		\item	helps us when we think in latent variable space
+	\end{itemize}
+\end{itemize}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}\frametitle{What do we learn from our data?}
+
+\begin{enumerate}
+	\setcounter{enumi}{1}
+	\item {\bf \color{myGreen}Troubleshooting}
+	\begin{itemize}
+		\item 	confirm a known problem occurred (SPE, \( T^2 \), \( t_a \))
+		\item 	use contribution plots to diagnose
+		\begin{itemize}
+			\item 	what went wrong?
+			\item 	when did it go wrong (batch)? 
+		\end{itemize}\pause
+		
+		\item 	use interpretation of \( t_1, t_2 \) to explain high/low score values\pause
+		\item 	use engineering judgement to fix problems from insight gained
+	\end{itemize}
+\end{enumerate}
+\end{frame}
+	
+\begin{frame}\frametitle{What do we learn from our data?}
+
+\begin{enumerate}
+	\setcounter{enumi}{2}
+	\item {\bf \color{myGreen}Improve/optimize} a process
+	\begin{itemize}
+		\item 	how can we move in the latent variable space?
+		\item 	what are the causal variables to adjust to move in \( t_1, t_2, \ldots \)
+		\item 	how do we do latent variable DOE's to fill in gaps
+	\end{itemize}	
+	These all rely on the concept of \alert{``model inversion''}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}\frametitle{What do we learn from our data?}
+
+\begin{enumerate}
+	\setcounter{enumi}{3}
+	\item {\bf \color{myGreen}Predictive modelling} 
+	\begin{itemize}
+		\item 	rely on PLS models
+		\item 	e.g. inferential sensors provide real-time prediction of \( \mathbf{Y} \), our final quality attributes
+		\begin{itemize}
+			\item 	PLS handles colinearity, missing values, noisy \( \mathbf{X} \)-variables
+			\item 	these 3 issues cannot be dealt with in ordinary least squares
+		\end{itemize}
+	\end{itemize}	
+\end{enumerate}
+\end{frame}
+
+\begin{frame}\frametitle{What do we learn from our data?}
+
+\begin{enumerate}
+	\setcounter{enumi}{4}
+	\item {\bf \color{myGreen}Process monitoring} 
+	\begin{itemize}
+		\item 	build a model from ``in control'' operation: make sure we remain there
+		\item 	don't need to take extra action if we remain in that space
+		\item 	do adjust process if trending out of space; we have
+		\begin{itemize}
+			\item 	SPE, \( T^2 \) and \( t_a \) score limits to monitor against
+		\end{itemize}
+		
+		\item 	use contribution plots to diagnose problems
+	\end{itemize}	
+\end{enumerate}
+\end{frame}
+
+\begin{frame}\frametitle{What do we learn from our data?}
+
+\begin{enumerate}
+	\setcounter{enumi}{4}
+	\item 	{\bf \color{myGreen}Process monitoring} (cont'd)	
+
+	\vspace{10pt}	
+			Advantages over \emph{univariate} monitoring:
+		
+			\begin{itemize}
+				\item 	we monitor \textbf{many} raw variables with summarized scores, SPE, and \( T^2 \)
+				\item 	i.e. we actually have \emph{fewer} control charts with multivariate monitoring
+				\item 	multivariate charts interpreted in the same way as univariate charts
+				\item 	i.e. no extra operator training required
+				\item 	ordinary Shewhart charts do not give any help with diagnosis
+			\end{itemize}	
+\end{enumerate}
+\end{frame}
+
+\begin{frame}\frametitle{Tools to learn from our data}
+
+\begin{enumerate}
+	\item 	\alert{Generic}: applicable to all types of processes
+	\item 	\alert{Informative}: easy to use by untrained staff for decision making
+		\begin{itemize}
+			\item clear and quick action possible
+		\end{itemize}
+	\item 	\alert{Simple to implement}: straightforward calculations and fast
+\end{enumerate}
+
+\vspace{1cm}
+
+\begin{exampleblock}{}<2->
+\centering{\large{\color{myOrange} Latent variable methods meet these criteria}}
+\end{exampleblock}
+\end{frame}
+
+
