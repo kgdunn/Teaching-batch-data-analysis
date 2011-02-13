@@ -2,6 +2,7 @@
 %\documentclass[11pt]{beamer}
 
 % \tiny\scriptsize\footnotesize\small\normalsize\large\Large\LARGE\huge\Huge
+% Adjust interline spacing
 
 \input{preamble.tex}
 \title[]{Latent Variable Methods for Batch Processes}
@@ -11,60 +12,28 @@
 \date[]{Course notes \copyright~ ConnectMV, Inc. \\ \vspace{1cm}{\footnotesize Presented at GSK, Mississauga, February 2011}}
 
 \begin{document}
-\begin{frame}
-\titlepage
-\end{frame}
+\begin{frame} \titlepage \end{frame}
 
-\begin{frame}\frametitle{TODO}
-
-
-	% \section{The final words}
-	% 
-	% \begin{frame}\frametitle{Final words}
-	% 	\vspace{3pt}
-	% 
-	% 	{\color{myOrange}\bf The three main sources of errors are due to:}
-	% 	\begin{enumerate}
-	% 		\item {\bf The modeller:} model formulation errors
-	% 		\item {\bf The algorithm:} truncation/discretization errors
-	% 		\item {\bf The computer:} round-off errors
-	% 	\end{enumerate}
-	% 
-	% 	\begin{columns}
-	% 		\column{.80\textwidth}
-	% 		\begin{exampleblock}{}
-	% 			\centering{In engineering applications, use \alert{double-precision or better} to mitigate the effect of round-off error}
-	% 		\end{exampleblock}
-	% 	\end{columns}
-	% 
-	% 	\vspace{5pt}
-	% 	\visible<2->{
-	% 		\begin{columns}
-	% 			\column{.34\textwidth}
-	% 
-	% 			\column{.65\textwidth}
-	% 			\alert{\bf Reading:}\\
-	% 			\vspace{3pt}
-	% 			\begin{itemize}
-	% 				\item Chapter 3 in S. C. Chapra, and R. P. Canale, {\em ``Numerical Methods for Engineers''}, McGraw Hill, 5th/6th Edition
-	% 				\item Wikipedia article on \textbf{\texttt{Floating point}} is well-written
-	% 				\item \href{http://docs.sun.com/source/806-3568/ncg_goldberg.html}{What every computer scientist should know about floating-point arithmetic}
-	% 			\end{itemize}
-	% 		\end{columns}
-	% 	}
-	% \end{frame}
-
-
-\begin{itemize}
-	\item	Adjust interline spacing  \hfill {\color{myOrange} $\leftarrow$ typical in practice!}
-\end{itemize}
-\end{frame}
+% Columns
+%
+% 	\begin{columns}
+% 		\column{.80\textwidth}
+% 		\begin{exampleblock}{}
+% 			\centering{In engineering applications, use \alert{double-precision or better} to mitigate the effect of round-off error}
+% 		\end{exampleblock}
+% 	\end{columns}
+% \end{frame}
+%
+%  \hfill {\color{myOrange} $\leftarrow$ typical in practice!}
 
 %-------------------------------------------------
 \begin{frame}\frametitle{Outline}
 \tableofcontents
 \end{frame}
 %-------------------------------------------------
+
+% Day 1
+% -------
 
 \input{batch-course-introduction.tex}
 
@@ -74,15 +43,24 @@
 
 \input{batch-course-feature-based-approach.tex}
 
+\input{batch-course-batch-LV-approach.tex}
+
 \input{batch-course-analysis-and-troubleshooting-example-sbr.tex}
 
 \input{batch-course-analysis-and-troubleshooting-example-dupont.tex}
 
 \input{batch-course-prediction-example-dupont.tex}
 
-\input{batch-course-part-B.tex}
+\input{batch-course-learning-summary.tex}
 
-\input{batch-course-part-C.tex}
+% Day 2
+% -------
+
+\input{batch-course-LV-monitoring.tex}
+
+\input{batch-course-alignment.tex}
+
+\input{batch-course-final-summary.tex}
 
 \end{document}
 
