@@ -281,6 +281,8 @@ These notes are based on ConnectMV's experience with batch systems, but also the
 					\item	just use the average
 					
 					\item	that's exactly what PCA does in this example
+					
+					\item	\( p_1 = [0.25,  0.25, 0.25, 0.25 ] \)
 				\end{itemize}
 		
 	\end{itemize}
@@ -289,6 +291,145 @@ These notes are based on ConnectMV's experience with batch systems, but also the
 	% FUTURE: come back to pencil notes in Red McMaster Sketchbook binder and add the part that shows the weighted sum calculation for the scores
 
 \end{frame}
+
+\begin{frame}\frametitle{LV model outputs}
+
+	\textbf{\emph{Example}}: room temperature measured at 4 points (contd)
+	
+	\begin{itemize}
+		
+		\item	How well did PCA do with 1 latent variable? Use \( R^2 \)
+		
+		\item	\vspace{6pt}\( R^2 = \frac{\displaystyle\text{Variability explained in}\,\, \hat{\mathbf{X}}}{\displaystyle \text{Variability started off with}} \) \vspace{6pt}
+		
+		\item	The part \emph{not explained}: called the error, \( \mathbf{E} \)
+	\end{itemize}
+	
+	\begin{center}
+		\includegraphics[width=\textwidth]{images/SPE-illustration.png}
+	\end{center}
+
+	\begin{itemize}
+		\item	One SPE value per observation
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}\frametitle{LV model outputs}
+
+	\textbf{\emph{Example}}: room temperature measured at 4 points (contd)
+	
+	\begin{center}
+		\includegraphics[width=\textwidth]{images/temperatures-SPE-after-one-PC.png}
+		% From: /Users/kevindunn/ConnectMV/pid-book/latent-variable-modelling/images/temperature-data.R
+	\end{center}
+
+	Use SPE to:
+	\begin{itemize}
+		\item	verify whether there are unexplained features: add another component to capture
+		
+		\item	highlight outliers (unexplained, and unusual)
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}\frametitle{LV model outputs}
+
+	\textbf{\emph{Example}}: room temperature measured at 4 points (contd)
+	
+	\begin{center}
+		\includegraphics[width=\textwidth]{images/temperatures-SPE-after-two-LV.png}
+		% From: /Users/kevindunn/ConnectMV/pid-book/latent-variable-modelling/images/temperature-data.R
+	\end{center}
+
+	\begin{itemize}
+		\item	\( R^2_{a=1} = 76.6\% \)
+		
+		\item	\( R^2_{a=2} = 16.9\% \)
+		
+		\item	In general \( R^2_{a=1} > R^2_{a=2} > \ldots \)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{LV model outputs}
+
+	\textbf{\emph{Example}}: room temperature measured at 4 points (contd)
+	
+	\begin{itemize}
+		\item	An extra phenomenon in the data was modelled: can verify this with a \( t_2 \) plot
+	\end{itemize}
+
+	\begin{center}
+		\includegraphics[width=\textwidth]{images/temperatures-LV-2-scores.png}
+		% From: /Users/kevindunn/ConnectMV/pid-book/latent-variable-modelling/images/temperature-data.R
+	\end{center}
+\end{frame}
+
+\begin{frame}\frametitle{Interpreting score plots: \(t_1, t_2, \ldots \)}
+
+\begin{itemize}
+	\item	Shown as scatter plot or time-series plot
+
+	\item	Each point in plot is an observation
+
+	\item	\(t_1\) explains more than \(t_2\); i.e. pay more attention to lower scores
+
+		\begin{itemize}
+			\item	observations that are similar appear close together in all scores
+			\item	\emph{colour code} score plots by another variables: makes plot more informative
+		\end{itemize}
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Interpreting score plots: \(t_1, t_2, \ldots \)}
+
+\begin{itemize}
+	\item	look for \textbf{clusters} and \textbf{patterns} to learn from data
+\end{itemize}
+
+\begin{center}
+	\includegraphics[width=\textwidth]{images/spectral-data-t1-t2-scoreplot.png}
+\end{center}
+\end{frame}
+
+
+\begin{frame}\frametitle{Interpreting loading plots: \( p_1, p_2, \ldots \)}
+
+\begin{itemize}
+	
+	\item	Shown as bar plots or scatter plots
+
+	\item 	One point per variable (tag) in the model
+	
+			\begin{itemize}
+				
+				\item	Larger loadings more important than smaller loadings
+				
+			\end{itemize}
+
+	\item 	Tags that behave similarly (move together) are close together 
+	
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Quick note on data preprocessing}
+
+\begin{itemize}
+	
+	\item	Different units and scales coming together in one data set
+	
+	\item	Scaling: gives every variable fair representation in model
+	
+	\item	Centering: removes arbitrary offset (usually reduces model by 1 component)
+	
+\end{itemize}
+
+\begin{center}
+	\includegraphics[width=\textwidth]{images/pca-on-food-texture-centering-and-scaling.png}
+\end{center}
+\end{frame}
+
 
 %-------------------------------------------------
 \section{Batch systems}
@@ -455,7 +596,7 @@ MATLAB can handle all the formats shown above.
 			% batch_X = block(data.X, 'X', 'batch', 'tagNames', b.tagNames, 'nBatches', b.nBatches);
 			% plot(batch_X, 'raw', 2, 3) % but used a limited set
 	\end{columns}
-	\todo{Add software instruction}	
+
 \end{frame}
 
 %-------------------------------------------------
@@ -476,9 +617,11 @@ MATLAB can handle all the formats shown above.
 				
 				\item	build ordinary PCA on \( \mathbf{X_f} \) or PLS: \( \left\{ \mathbf{Z} \,\,\text{and}\,\, \mathbf{X_f}\right\} \stackrel{\text{PLS}}{\longmapsto} \mathbf{Y} \)
 			\end{itemize}
-			
-			\todo{8. Features}
 \end{itemize}
+
+\begin{center}
+	\includegraphics[width=0.95\textwidth]{images/data-after-feature-extraction.png}
+\end{center}
 \end{frame}
 
 \begin{frame}\frametitle{Which features to extract}
