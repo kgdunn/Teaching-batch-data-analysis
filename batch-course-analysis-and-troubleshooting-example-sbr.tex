@@ -19,7 +19,7 @@
 \end{frame}
 
 \defverbatim[colored]\loaddata{%
-\begin{lstlisting}[basicstyle=\tt\scriptsize,frame=none,language=C++,linewidth=.9\textwidth]
+\begin{lstlisting}[basicstyle=\tt\scriptsize\color{myOrange},frame=none,language=C++,linewidth=.9\textwidth]
 
 data = load('datasets/SBR.mat');   % X is in a  10600 x 9 matrix
 Y_data = data.Y;
@@ -66,7 +66,7 @@ batchX = block(data.X(:, 4:9), 'X', 'batch', ...
 		
 		\item	\( R^2_1 = 24.5\% \) and \( R^2_2 = 13.3\% \)
 		
-		\item	Next: scores, loadings, SPE, \( T^2 \): all the usual PCA tools
+		\item	Next: scores, loadings, SPE, \( T^2 \) (all the usual PCA tools)
 		
 	\end{itemize}
 
@@ -81,7 +81,7 @@ batchX = block(data.X(:, 4:9), 'X', 'batch', ...
 	\begin{itemize}
 		\item	{\color{myOrange}{\texttt{plot(batch\_PCA, 'scores')}}}
 		
-		\item	Batch 34 and 37 had differences from bulk of data in their progress.\pause
+		\item	Batch 34 and 37 had differences in their progress from bulk of other batches\pause
 		
 		\item	These were in fact the unsuccessful batches!  This shows promise.
 	\end{itemize}
@@ -97,7 +97,7 @@ batchX = block(data.X(:, 4:9), 'X', 'batch', ...
 	\begin{itemize}
 		\item	{\color{myOrange}{\texttt{plot(batch\_PCA, 'spe')}}}
 		
-		\item	No problems picked up.  This is the overall SPE, for the \emph{entire} batch.
+		\item	No problems picked up.  This is the overall SPE, using data from the \emph{entire} batch.
 	\end{itemize}
 
 \end{frame}
@@ -115,7 +115,7 @@ batchX = block(data.X(:, 4:9), 'X', 'batch', ...
 		
 		\item	LV2: explains tags 2, 3, 4, 5, 6 by about 15\% each
 		
-		\item	LV1: explains everything over \( t = 0 \)  to \( t = 30 \)
+		\item	LV1: explains everything from \( t = 0 \)  to \( t = 30 \)
 		
 		\item	\( R^2 \) is low at start because all batches are similar initially
 		
@@ -189,7 +189,7 @@ batchX = block(data.X(:, 4:9), 'X', 'batch', ...
 		\item	Confirmed our interpretation with the raw data
 				
 				\begin{itemize}
-					\item	{\color{myOrange}{\texttt{  plot(batch\_PCA.X, 'highlight', 2, 3, 37)		  }}}
+					\item	{\color{myOrange}{\texttt{plot(batch\_PCA.X, 'highlight', 2, 3, 37)		  }}}
 					
 					\item	uses a \( 2 \times 3 \) layout for the raw tags
 				\end{itemize}
@@ -206,7 +206,7 @@ batchX = block(data.X(:, 4:9), 'X', 'batch', ...
 				\begin{itemize}
 					\item	SPE values also available during the batch, with limits
 					
-					\item	{\color{myOrange}{\texttt{  plot(batch_PCA, 'spe', {'batch', 34})		  }}}
+					\item	{\color{myOrange}{\texttt{plot(batch\_PCA, 'spe', \{'batch', 34\})		  }}}
 					
 				\end{itemize}
 	\end{itemize}

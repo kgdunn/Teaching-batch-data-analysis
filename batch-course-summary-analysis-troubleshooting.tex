@@ -4,33 +4,48 @@
 	
 General procedure to follow:	
 
-\begin{itemize}
-	\item	Initially include all batches
+	\begin{itemize}
+		\item	Plot the trajectories\hfill {\color{myOrange}{\texttt{plot(dataX,'raw', n, m)}}}
 	
-	\item	Build model on all data (usually 2 to 3 components)
+				\begin{itemize}
+					\item	Sometime outlier batches already detectable
+				
+					\item	Visualize how good your alignment is: do data need extra pretreatment?
+				\end{itemize}
+			
+		\item	Initially include all batches
 	
-	\item	Score plot to see if: \hfill {\color{myOrange}{\texttt{plot(model,'scores')}}}
+		\item	Build model on all data (usually \( A \) = 2 to 3 components)
+		
+				\begin{itemize}
+					\item	{\color{myOrange}{\texttt{model = lvm({'X', dataX}, A);  }}}
+				\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Summary: Data understanding and troubleshooting}
 	
-			\begin{itemize}
-				\item	Clusters due to seasonal effect?
-				
-				\item	Different types of abnormalities (faults) will cluster together.
-				
-				\item	Different product grade clusters?
-				
-				\item	Raw material suppler change over groupings?
-				
-				\item	Outliers? Usually we know which batches were bad.  We usually (always?) start to see bad batches in the scores.
-				
-				\item	Most informative: \( t_1 - t_2 \) and \( t_1 - t_3 \) and \( t_2 - t_3 \)
-			\end{itemize}
-\end{itemize}
+	Score plots:\hfill {\color{myOrange}{\texttt{plot(model,'scores')}}}
+
+	\begin{itemize}
+		\item	Clusters due to seasonal effect?
+		
+		\item	Different types of abnormalities (faults) will cluster together.
+		
+		\item	Different product grade clusters?
+		
+		\item	Raw material suppler change over groupings?
+		
+		\item	Outliers? Usually we know which batches were bad.  We usually (always?) start to see bad batches in the scores.
+		
+		\item	Most informative: \( t_1 - t_2 \) and \( t_1 - t_3 \) and \( t_2 - t_3 \)
+	\end{itemize}
 
 \end{frame}
 
 \begin{frame}\frametitle{Summary: Data understanding and troubleshooting}
 	
-SPE plots:
+SPE plots: \hfill {\color{myOrange}{\texttt{plot(model,'spe')}}}
 
 \begin{itemize}
 	\item	There are 2 types:
@@ -53,15 +68,18 @@ SPE plots:
 \begin{frame}\frametitle{Summary: Data understanding and troubleshooting}
 	
 \begin{itemize}
-	\item	Loadings (PCA) and weights (PLS):
+	\item	Loadings (PCA) and weights (PLS):  
 	
 			\begin{itemize}
+				
+				\item	{\color{myOrange}{\texttt{plot(model.X,'loadings')}}}
+				
 				\item	shows \emph{which variables} and at \emph{what times} they dominate each latent variable
 				
 			\end{itemize}
 
 
-	\item 	\( R^2 \) plots
+	\item 	\( R^2 \) plots\hfill {\color{myOrange}{\texttt{plot(model,'R2')}}}
 		
 			\begin{itemize}
 				\item	interpreted in combination with loadings plot

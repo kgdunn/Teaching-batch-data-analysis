@@ -10,7 +10,7 @@
 		
 		\item	12 hours before lab values returned: batch-to-batch adjustment not possible
 		
-		\item	Known problems with batches: 40, 41, 42, 50, 51, 53, 54, 55
+		\item	Known problems with batches: 38, 40, 41, 42, 50, 51, 53, 54, 55
 	\end{itemize}
 	
 	
@@ -42,7 +42,7 @@
 					\item	\( R^2_X = [38.28\%, 17.58\%]\), or cumulatively: 55.9\%
 				\end{itemize}
 		
-		\item	Score plot:
+		\item	Score plot: {\color{myOrange}{\texttt{plot(batch\_PCA, 'scores')  }}}
 				
 				\begin{columns}
 					\column{0.8\textwidth}
@@ -64,40 +64,86 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}\frametitle{DuPont Nylon example: initial PCA}
+\begin{frame}\frametitle{DuPont Nylon example: SPE}
 	\begin{itemize}
-		\item	SPE plot
+		\item	SPE plot: {\color{myOrange}{\texttt{plot(batch\_PCA, 'spe')  }}} 
 	\end{itemize}
 	
 	\begin{center}
 		\includegraphics[width=\textwidth]{images/dupont/dupont-raw-SPE.jpg}
-		% batch_PCA = lvm({'X', batch_X}, 2);
-		% plot(batch_PCA, 'spe', {'labels'})
 	\end{center}
 \end{frame}
 
 \begin{frame}\frametitle{DuPont Nylon example: batch 54 (high \( t_1 \) batch)}
 	\begin{itemize}
-		\item	Contribution plot in \( t_1 \)
+		\item	First plot loadings \( p_1 \) to understand that direction
+			
+				\begin{itemize}
+					\item	{\color{myOrange}{\texttt{plot(batch\_PCA.X, 'loadings', 1)    }}} 
+					
+					\item	Tags and time periods that are positive in \( p_1 \) will be high in batch 54
+					
+					\item	The opposite also applies
+				\end{itemize}
+		
+		\item 	Main problems are at the end of the batch:
+		
+				\begin{itemize}
+					\item	Pressures 2 and 3 are below normal
+					
+					\item	Temp-C1 is above normal
+					
+				\end{itemize}
+		
+		\item 	Other problems in Temp-R1 and Temp-R3 at start of the batch
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{DuPont Nylon example: loadings \( p_1 \)}
+
+\begin{center}
+	\includegraphics[width=\textwidth]{images/dupont/dupont-loadings-p1.png}
+\end{center}
+
+	\begin{itemize}
+		\item	Explore other score outliers interactively in class
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{DuPont Nylon example: SPE}
+
+	\begin{itemize}
+		\item	Batch 49 shows in the overall SPE 
+		
+		 		\begin{itemize}
+		 			\item	{\color{myOrange}{\texttt{plot(batch\_PCA, 'spe') }}} 
+		 		\end{itemize}
+
+		\item 	Also look at the time-varying SPE to see \emph{when} problem occurred: \( t \) = 57 to 67 
+		
+				\begin{itemize}
+					\item	{\color{myOrange}{\texttt{plot(batch\_PCA, 'spe', \{'batch', 49\})  }}} 
+				\end{itemize}
+		
+		\item 	Confirm in contribution plots: tags 6 to 10
 	\end{itemize}
 	
 	\begin{center}
+		\includegraphics[width=\textwidth]{images/dupont/dupont-batch-49-spe.png}
 	\end{center}
 \end{frame}
 
-\begin{frame}\frametitle{DuPont Nylon example: Summary}
-	
-\begin{enumerate}
-	\item	Plot the trajectories
-	
-			\begin{itemize}
-				\item	Sometime outlier batches already detectable
-				
-				\item	Visualize how good your alignment is: do data need extra pretreatment?
-			\end{itemize}
-\end{enumerate}
+\begin{frame}\frametitle{DuPont Nylon example: Raw data for batch 49}
 
-
+	\begin{itemize}
+		\item	Likely that tag 5 (wrongly) identified as cause
+	\end{itemize}
+	\begin{center}
+		\includegraphics[width=\textwidth]{images/dupont/dupont-highlight-raw-data-batch-49.png}
+	\end{center}
 	
+	\begin{itemize}
+		\item	Cause: subtle deviations in heating and cooling system (broken correlation) and pressure system
+	\end{itemize}
 \end{frame}
 
