@@ -136,9 +136,67 @@ batchX = block(data.X(:, 4:9), 'X', 'batch', ...
 	\end{center}
 	
 	\begin{itemize}
-		\item	Batch 34:
+		\item	Batch 37 [low \( t_1 \)]: below average latex density and conversion throughout the batch
+		
+		\item	Batch 34:[high \( t_2 \)]: above average cooling water temp, jacket temp, and below avg energy released in last half
 		
 	\end{itemize}
 \end{frame}
+ 
+\begin{frame}\frametitle{SBR: scores \emph{over time} for batch 37}
+	
+	\begin{center}
+		\includegraphics[width=\textwidth]{images/sbr/SBR-time-evolving-scores.png}
+	\end{center}
+	
+	\begin{itemize}
+		\item	Don't just have a \( t \)-score at the end, also get the score as batch progresses
+		
+		\item	Highlights \emph{when} the problem occurred: right at the start
+		
+				\begin{itemize}
+					\item	Was due to an impurity in the feed: consumed reactant and lowers latex density and conversion
+				\end{itemize}
+	\end{itemize}
+	
+	{\color{myOrange}{\texttt{plot(batch\_PCA, 'scores', \{'batch', 37\})}}}
+\end{frame}
+
+\begin{frame}\frametitle{SBR: contribution plot for batch 37}
+	
+	\begin{center}
+		\includegraphics[width=\textwidth]{images/sbr/SBR-contributions-to-batch-37.png}
+	\end{center}
+	
+	\begin{itemize}
+		\item	Contributions highest for the latex density and conversion, as expected.
+		
+				\begin{itemize}
+					\item	{\color{myGreen}{\texttt{{\color{myOrange}{\texttt{  contrib\_37 = contrib(batch\_PCA, 37)  }}}}}
+					
+					\item	{\color{myGreen}{\texttt{{\color{myOrange}{\texttt{  plot(contrib\_37, 'scores', 1)		  }}}}}
+				\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{SBR: raw data for batch 37 (to confirm)}
+	
+	\begin{center}
+		\includegraphics[width=\textwidth]{images/sbr/SBR-raw-data-batch-37-highlighted.png}
+	\end{center}
+	
+	\begin{itemize}
+		\item	Confirmed our interpretation with the raw data
+				
+				\begin{itemize}
+					\item	{\color{myGreen}{\texttt{{\color{myOrange}{\texttt{  plot(batch\_PCA.X, 'highlight', 2, 3, 37)		  }}}}}
+					
+					\item	uses a \( 2 \times 3 \) layout for the raw tags
+				\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+
 
 
