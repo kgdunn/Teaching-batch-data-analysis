@@ -65,7 +65,6 @@ batchX = block(data.X(:, 4:9), 'X', 'batch', ...
 		\item	{\color{myOrange}{\texttt{batch\_PCA = lvm(\{'X', batchX\}, 2)}}}
 		
 		\item	\( R^2_1 = 24.5\% \) and \( R^2_2 = 13.3\% \)
-
 		
 		\item	Next: scores, loadings, SPE, \( T^2 \): all the usual PCA tools
 		
@@ -73,19 +72,73 @@ batchX = block(data.X(:, 4:9), 'X', 'batch', ...
 
 \end{frame}
 
-\begin{frame}\frametitle{SBR: scores}
+\begin{frame}\frametitle{SBR: scores and \( T^2 \)}
+	
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{images/sbr/SBR-scores-and-T2.png}
+	\end{center}
+
+	\begin{itemize}
+		\item	{\color{myOrange}{\texttt{plot(batch\_PCA, 'scores')}}}
+		
+		\item	Batch 34 and 37 had differences from bulk of data in their progress.\pause
+		
+		\item	These were in fact the unsuccessful batches!  This shows promise.
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{SBR: check SPE}
+	
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{images/sbr/SBR-SPE-plot-per-batch.png}
+	\end{center}
+
+	\begin{itemize}
+		\item	{\color{myOrange}{\texttt{plot(batch\_PCA, 'spe')}}}
+		
+		\item	No problems picked up.  This is the overall SPE, for the \emph{entire} batch.
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{SBR: understand \( R^2 \) breakdown}
+	
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{images/sbr/SBR-R2-over-batch.png}
+	\end{center}
+
+	\begin{itemize}
+		\item	{\color{myOrange}{\texttt{plot(batch\_PCA, 'R2')}}}
+		
+		\item	LV1: Tags 4 (latex density) and 5 (conversion) dominate
+		
+		\item	LV2: explains tags 2, 3, 4, 5, 6 by about 15\% each
+		
+		\item	LV1: explains everything over \( t = 0 \)  to \( t = 30 \)
+		
+		\item	\( R^2 \) is low at start because all batches are similar initially
+		
+				\begin{itemize}
+					\item	after centering and scaling there is just noise at the start.
+				\end{itemize}
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{SBR: loadings}
+	
+	\begin{center}
+		\includegraphics[width=\textwidth]{images/sbr/SBR-loadings-p1.png}
+	\end{center}
+	\begin{center}
+		\includegraphics[width=\textwidth]{images/sbr/SBR-loadings-p2.png}
+	\end{center}
 	
 	\begin{itemize}
-		\item	Start with 2 to 3 components: \emph{just to see what's going on}
-		
-		\item	{\color{myOrange}{\texttt{batch\_PCA = lvm(\{'X', batchX\}, 2)}}}
-		
-		\item	\( R^2_1 = 24.5\% \) and \( R^2_2 = 13.3\% \)
-
-		
-		\item	Next: scores, loadings, SPE, \( T^2 \): all the usual PCA tools
+		\item	Batch 34:
 		
 	\end{itemize}
-
 \end{frame}
+
 
