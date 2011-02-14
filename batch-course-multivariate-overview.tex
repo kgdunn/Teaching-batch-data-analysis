@@ -8,7 +8,7 @@
 \begin{enumerate}
 	\item	High dimensionality in data we collect, e.g. NIR spectra
 			\begin{center}
-				\includegraphics[width=6cm]{images/high-dimensionality-data.jpg}
+				\includegraphics[width=5cm]{images/high-dimensionality-data.jpg}
 			\end{center}
 			
 			
@@ -26,6 +26,7 @@
 					\item	we resort to variable selection					
 					\item	we risk omitting important variables
 					\item	using all data: get stronger signal from many noisy variables
+					\item	batch data: highly correlated !
 				\end{itemize}
 				
 			\end{columns}
@@ -43,13 +44,13 @@
 				\includegraphics[width=6cm]{images/missing-data.png}
 			\end{center}
 			
-			Batch data sets: usually not an issue for complete, historical batches			
+			Batch data: usually not an issue for complete, historical batches			
 			
 	
-	\item	Large number of samples
+	\item	Large number of samples (rows)
 	
 			\begin{itemize}
-				\item	modern computer hardware
+				\item	modern computer hardware has kept pace though
 				
 				\item	smart algorithms (build models from smaller data groups)
 			\end{itemize} 
@@ -127,7 +128,7 @@
 					
 					\item	that's exactly what PCA does in this example
 					
-					\item	\( p_1 = [0.25,  0.25, 0.25, 0.25 ] \)
+					\item	\( p_1 = [0.25,  0.25, 0.25, 0.25 ] \), and then scaled
 				\end{itemize}
 		
 	\end{itemize}
@@ -155,7 +156,7 @@
 	\end{center}
 
 	\begin{itemize}
-		\item	One SPE value per observation
+		\item	One SPE value per observation (row)
 	\end{itemize}
 	
 \end{frame}
@@ -171,9 +172,9 @@
 
 	Use SPE to:
 	\begin{itemize}
-		\item	verify whether there are unexplained features: add another component to capture
+		\item	verify whether there are unexplained phenomena: add another component to capture
 		
-		\item	highlight outliers (unexplained, and unusual)
+		\item	highlight outliers, which are also just unexplained, and unusual phenomena, but few
 	\end{itemize}
 	
 \end{frame}
@@ -192,7 +193,9 @@
 		
 		\item	\( R^2_{a=2} = 16.9\% \)
 		
-		\item	In general \( R^2_{a=1} > R^2_{a=2} > \ldots \)
+		\item	\( R^2_{a=1} > R^2_{a=2} > \ldots \) for PCA and PLS model
+		
+		\item	Every component will explain something extra
 	\end{itemize}
 \end{frame}
 
@@ -223,6 +226,9 @@
 			\item	observations that are similar appear close together in all scores
 			\item	\emph{colour code} score plots by another variables: makes plot more informative
 		\end{itemize}
+		
+	
+	\item	We will make heavy use of this in batch data analysis
 
 \end{itemize}
 \end{frame}
@@ -243,6 +249,9 @@
 
 	\item 	Tags that behave similarly (move together) are close together 
 	
+	
+	\item	Batch data loadings: time-varying !  We'll see this today.
+	
 \end{itemize}
 \end{frame}
 
@@ -250,7 +259,7 @@
 
 \begin{itemize}
 	
-	\item	Different units and scales coming together in one data set
+	\item	Columns with different units and scaling coming together in one data set
 	
 	\item	Scaling: gives every variable fair representation in model
 	

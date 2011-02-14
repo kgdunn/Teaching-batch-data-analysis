@@ -14,8 +14,16 @@
 \setbeamertemplate{navigation symbols}{}          % suppress all navigation symbols
 \setbeamertemplate{blocks}[rounded][shadow=true]  % use rounded blocks (boxes), with shadows
 
+
+\definecolor{todoGreen}{rgb}{0.0, 0.9, 0.0}
+\definecolor{myGreen}{rgb}{0.,0.4,0.}
+\definecolor{myOrange}{rgb}{1.,0.5,0.}
+\definecolor{myBlue}{rgb}{0.0,0.1,0.9}
+\definecolor{myRed}{rgb}{1.0,0.0,0.0}
+\definecolor{myLightGrey}{rgb}{0.8,0.8,0.8}
+
 % Show page numbers on slides
-\setbeamertemplate{footline}{\begin{beamercolorbox}[right]{section in head/foot}\insertpagenumber~~~ \vskip5pt \end{beamercolorbox}}
+\setbeamertemplate{footline}{\begin{beamercolorbox}[right]{section in head/foot}{\color{myLightGrey}{ConnectMV,}} \insertpagenumber~~~ \vskip5pt \end{beamercolorbox}}
 
 \setbeamercovered{transparent} 
 
@@ -40,11 +48,7 @@
 \futurelet\reserved@a\@xhline}
 \makeatother
 
-\definecolor{todoGreen}{rgb}{0.0, 0.9, 0.0}
-\definecolor{myGreen}{rgb}{0.,0.4,0.}
-\definecolor{myOrange}{rgb}{1.,0.5,0.}
-\definecolor{myBlue}{rgb}{0.0,0.1,0.9}
-\definecolor{myRed}{rgb}{1.0,0.0,0.0}
+
 
 % Some definitions
 \newcommand{\todo}[1]{{\center{\color{todoGreen} #1}}}

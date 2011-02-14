@@ -11,33 +11,35 @@ These notes are based on ConnectMV's experience with batch systems, but also the
 
 	\item	Nomikos, ``Statistical Process Control of Batch Processes'', Ph.D thesis, McMaster University, 1995, {\scriptsize http://digitalcommons.mcmaster.ca/opendissertations/1667/}
 	
-	\item	Garcia-Mu\~noz, ``Batch process improvement using latent latent variable methods'', Ph.D thesis, McMaster University, 2004 {\scriptsize http://digitalcommons.mcmaster.ca/opendissertations/1596/}
+	%\item	Garcia-Mu\~noz, ``Batch process improvement using latent latent variable methods'', Ph.D thesis, McMaster University, 2004 {\scriptsize http://digitalcommons.mcmaster.ca/opendissertations/1596/}
 	
 	\item	Wold, Kettaneh-Wold, MacGregor, Dunn, ``Batch Process Modeling and MSPC'', \emph{Comprehensive Chemometrics}, 2009, {\scriptsize http://dx.doi.org/10.1016/B978-044452701-1.00108-3}
+		
+	\item	And many other batch papers - please ask.
 \end{enumerate}
 \end{frame}
 
 %-------------------------------------------------
-\section{What do we learn from our data?}
+\section{What do we want to learn from our data?}
 %-------------------------------------------------
 
-\begin{frame}\frametitle{What do we learn from our data?}
+\begin{frame}\frametitle{What do we want to learn from our data?}
 
 \begin{enumerate}
 	\item {\bf \color{myGreen}Improve/confirm} process understanding
 \begin{itemize}
 
-	\item	confirm which phenomena have greatest effect in the data 
+	\item	confirm which phenomena have greatest effect in the data (PCA)
 
-	\item	which variables have most influence
+	\item	which variables have most influence on final quality (PLS)
 
-	\item	interpret latent variables
+	\item	interpret latent variables (all LV model types)
 
 \end{itemize}
 \end{enumerate}
 \end{frame}
 
-\begin{frame}\frametitle{What do we learn from our data?}
+\begin{frame}\frametitle{What do we want to learn from our data?}
 
 \begin{enumerate}
 	\setcounter{enumi}{1}
@@ -51,52 +53,71 @@ These notes are based on ConnectMV's experience with batch systems, but also the
 		\end{itemize}\pause
 		
 		\item 	use interpretation of \( t_1, t_2 \) to explain high/low score values\pause
-		\item 	use engineering judgement to fix problems from insight gained
+		\item 	use engineering judgement to fix problems from insight gained from LV outputs
 	\end{itemize}
 \end{enumerate}
 \end{frame}
 	
-\begin{frame}\frametitle{What do we learn from our data?}
+\begin{frame}\frametitle{What do we want to learn from our data?}
 
 \begin{enumerate}
 	\setcounter{enumi}{2}
+	
 	\item {\bf \color{myGreen}Improve/optimize} a process
+	
 	\begin{itemize}
 		\item 	how can we move in the latent variable space?
-		\item 	what are the causal variables to adjust to move in \( t_1, t_2, \ldots \)
-		\item 	how do we do latent variable DOE's to fill in gaps
+		
+		\item 	what causal variables can be adjusted to move in \( t_1, t_2, \ldots \)
+		
+		\item 	latent variable DOE's to fill in gaps in ``sparse'' models
 	\end{itemize}	
+	
 	These all rely on the concept of \alert{``model inversion''}
+	
 \end{enumerate}
 \end{frame}
 
-\begin{frame}\frametitle{What do we learn from our data?}
+\begin{frame}\frametitle{What do we want to learn from our data?}
 
 \begin{enumerate}
 	\setcounter{enumi}{3}
+	
 	\item {\bf \color{myGreen}Predictive modelling} 
+	
 	\begin{itemize}
-		\item 	rely on PLS models
-		\item 	e.g. inferential sensors provide real-time prediction of \( \mathbf{Y} \), our final quality attributes
+		\item 	uses PLS models
+		
+		\item 	e.g. inferential sensors provide real-time prediction of \( \mathbf{Y} \), our final quality attributes (FQAs)
 		\begin{itemize}
 			\item 	PLS handles colinearity, missing values, noisy \( \mathbf{X} \)-variables
-			\item 	these 3 issues cannot be dealt with in ordinary least squares
+			\item 	these 3 issues cannot be dealt with by ordinary least squares
 		\end{itemize}
 	\end{itemize}	
 \end{enumerate}
 \end{frame}
 
-\begin{frame}\frametitle{What do we learn from our data?}
+\begin{frame}\frametitle{What do we want to learn from our data?}
 
 \begin{enumerate}
 	\setcounter{enumi}{4}
 	\item {\bf \color{myGreen}Process monitoring} 
+	
 	\begin{itemize}
+		
 		\item 	build a model from ``in control'' operation: make sure we remain there
+		
 		\item 	don't need to take extra action if we remain in that space
-		\item 	do adjust process if trending out of space; we have
+		
+		\item 	do adjust process if trending out of space; we can monitor: 
+		
 		\begin{itemize}
-			\item 	SPE, \( T^2 \) and \( t_a \) score limits to monitor against
+			\item 	SPE, 
+			
+			\item	\( T^2 \)
+			
+			\item	\( t_a \) score limits 
+			
 		\end{itemize}
 		
 		\item 	use contribution plots to diagnose problems
@@ -104,7 +125,7 @@ These notes are based on ConnectMV's experience with batch systems, but also the
 \end{enumerate}
 \end{frame}
 
-\begin{frame}\frametitle{What do we learn from our data?}
+\begin{frame}\frametitle{What do we want to learn from our data?}
 
 \begin{enumerate}
 	\setcounter{enumi}{4}

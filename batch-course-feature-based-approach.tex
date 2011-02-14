@@ -60,7 +60,7 @@
 				
 				\item	loadings and weights: used to interpret any clusters in the scores
 				
-				\item	\( R^2 \) per variable, small weights: eliminate less useful features
+				\item	use \( R^2 \) per variable and small weights to decide which on less-useful features to eliminate
 			\end{itemize}\pause
 	
 	\item	Learn about the batch: {\small e.g.: variability in cooling water temperature related to poor FQA}
@@ -81,10 +81,19 @@
 			\begin{itemize}
 				\item	no distinct features and hard to quantify
 			\end{itemize}
-			
-			\todo{9 FIGURE HERE}
-	
-	\item	Depends on engineer's prior knowledge
+
+\end{itemize}
+
+\begin{center}
+	\includegraphics[width=\textwidth]{images/smooth-trajectories-unsuitable-for-features.png}
+\end{center}
+
+\end{frame}
+
+\begin{frame}\frametitle{Disadvantages of feature-based models}
+
+\begin{itemize}
+	\item	Features to choose depend on engineer's prior knowledge
 	
 	\item	Subtle defects and broken correlations between variables 
 	
@@ -98,6 +107,8 @@
 	
 \end{itemize}
 \end{frame}
+
+
 
 \begin{frame}\frametitle{Class example: using feature-based models}
 

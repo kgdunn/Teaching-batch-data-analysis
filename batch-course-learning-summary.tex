@@ -82,33 +82,46 @@
 \end{enumerate}
 \end{frame}
 
-\begin{frame}\frametitle{What do we learn from our data?}
+\begin{frame}\frametitle{What do we want to learn from our data?}
 
 \begin{enumerate}
 	\setcounter{enumi}{3}
+	
 	\item {\bf \color{myGreen}Predictive modelling} 
+	
 	\begin{itemize}
-		\item 	rely on PLS models
-		\item 	e.g. inferential sensors provide real-time prediction of \( \mathbf{Y} \), our final quality attributes
+		\item 	uses PLS models
+		
+		\item 	e.g. inferential sensors provide real-time prediction of \( \mathbf{Y} \), our final quality attributes (FQAs)
 		\begin{itemize}
 			\item 	PLS handles colinearity, missing values, noisy \( \mathbf{X} \)-variables
-			\item 	these 3 issues cannot be dealt with in ordinary least squares
+			\item 	these 3 issues cannot be dealt with by ordinary least squares
 		\end{itemize}
 	\end{itemize}	
 \end{enumerate}
 \end{frame}
 
-\begin{frame}\frametitle{What do we learn from our data?}
+\begin{frame}\frametitle{What do we want to learn from our data?}
 
 \begin{enumerate}
 	\setcounter{enumi}{4}
 	\item {\bf \color{myGreen}Process monitoring} 
+	
 	\begin{itemize}
+		
 		\item 	build a model from ``in control'' operation: make sure we remain there
+		
 		\item 	don't need to take extra action if we remain in that space
-		\item 	do adjust process if trending out of space; we have
+		
+		\item 	do adjust process if trending out of space; we can monitor: 
+		
 		\begin{itemize}
-			\item 	SPE, \( T^2 \) and \( t_a \) score limits to monitor against
+			\item 	SPE, 
+			
+			\item	\( T^2 \)
+			
+			\item	\( t_a \) score limits 
+			
 		\end{itemize}
 		
 		\item 	use contribution plots to diagnose problems
@@ -128,9 +141,9 @@
 			\begin{itemize}
 				\item 	we monitor \textbf{many} raw variables with summarized scores, SPE, and \( T^2 \)
 				\item 	i.e. we actually have \emph{fewer} control charts with multivariate monitoring
-				\item 	multivariate charts interpreted in the same way as univariate charts
-				\item 	i.e. no extra operator training required
-				\item 	ordinary Shewhart charts do not give any help with diagnosis
+				\item 	multivariate charts are interpreted in the same way as univariate charts
+				\item 	i.e. little extra operator training required
+				\item 	ordinary Shewhart charts do not give any help with diagnosis, LV contributions do
 			\end{itemize}	
 \end{enumerate}
 \end{frame}
