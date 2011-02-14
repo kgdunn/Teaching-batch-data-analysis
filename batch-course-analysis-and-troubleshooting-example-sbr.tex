@@ -1,3 +1,91 @@
 %!TEX root = batch-course.tex
-\begin{frame}\frametitle{TODO}
+
+\begin{frame}\frametitle{Batch PCA example: SBR}
+	
+	\begin{itemize}
+		\item	Simulated data from \emph{large} mechanistic model for styrene butadiene rubber
+		
+		\item	Good to start learning from this case study
+		
+		\item	Simulated to contain ``normal operating conditions''
+		
+				\begin{itemize}
+					\item	2 main problematic batches
+					
+					\item	same fault, but starting at different times
+				\end{itemize}
+	\end{itemize}
+	
 \end{frame}
+
+\defverbatim[colored]\loaddata{%
+\begin{lstlisting}[basicstyle=\tt\scriptsize,frame=none,language=C++,linewidth=.9\textwidth]
+
+data = load('datasets/SBR.mat');   % X is in a  10600 x 9 matrix
+Y_data = data.Y;
+   
+% Specify the data dimensions
+nBatches = 53;
+nTags = 6;
+nSamples = 200;  % not required
+tagNames = {'Reactor temperature', 'Cooling water temp', ...
+            'Reactor jacket temperature', 'Latex density', ...
+            'Conversion', 'Energy released'};
+        
+% Create a batch block first: tell it how many batches 
+% there are in the aligned data
+% Ignore tags 1, 2, 3 (noisy and uninformative)
+
+batchX = block(data.X(:, 4:9), 'X', 'batch', ...
+               'tagNames', tagNames, 'nBatches', nBatches);
+\end{lstlisting}}
+
+\begin{frame}[fragile,containsverbatim]\frametitle{SBR: load the data}
+	\loaddata
+\end{frame}
+
+\begin{frame}\frametitle{SBR: raw data}
+	
+	\begin{itemize}
+		\item	Batches: \( N = 53 \); Tags: \( K = 6 \); Time steps: \( J = 200 \)
+		
+	\end{itemize}
+	
+	\begin{center}
+		\includegraphics[width=\textwidth]{images/sbr/SBR-raw-data-trajectories.png}
+	\end{center}
+	{\color{myOrange}{\texttt{plot(batchX, 'raw', 2, 3)}}}
+\end{frame}
+
+\begin{frame}\frametitle{SBR: build model}
+	
+	\begin{itemize}
+		\item	Start with 2 to 3 components: \emph{just to see what's going on}
+		
+		\item	{\color{myOrange}{\texttt{batch\_PCA = lvm(\{'X', batchX\}, 2)}}}
+		
+		\item	\( R^2_1 = 24.5\% \) and \( R^2_2 = 13.3\% \)
+
+		
+		\item	Next: scores, loadings, SPE, \( T^2 \): all the usual PCA tools
+		
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{SBR: scores}
+	
+	\begin{itemize}
+		\item	Start with 2 to 3 components: \emph{just to see what's going on}
+		
+		\item	{\color{myOrange}{\texttt{batch\_PCA = lvm(\{'X', batchX\}, 2)}}}
+		
+		\item	\( R^2_1 = 24.5\% \) and \( R^2_2 = 13.3\% \)
+
+		
+		\item	Next: scores, loadings, SPE, \( T^2 \): all the usual PCA tools
+		
+	\end{itemize}
+
+\end{frame}
+

@@ -1,3 +1,4 @@
+%!TEX root = batch-course.tex
 %-------------------------------------------------
 \section{Batch analysis via direct PCA and PLS}
 %-------------------------------------------------
@@ -19,22 +20,21 @@
 	\textbf{Batch system}: group of the \emph{same variables}, gathered over a period of \emph{time}.  Why not just use ordinary PCA or PLS:
 
 	\begin{center}
-		\includegraphics[width=2.4cm]{images/batch-illustrate-unusual-unfolding.png}
+		\includegraphics[width=2.0cm]{images/batch-illustrate-unusual-unfolding.png}
 	\end{center}
-
 
 	\begin{itemize}
 		\item 	PCA is invariant to row order: 
 		\begin{itemize}			
 			\item	can shuffle rows, still get same model
-			\item 	explain how rows are related to each other
+			\item 	PCA explains how rows are related to each other
 			\item 	each row is assumed independent of the others
-			\item 	summarize relationship between variables (columns)
+			\item 	summarizes relationship between variables (columns)
 		\end{itemize}
 	\end{itemize}
 
 	\begin{exampleblock}{Key issue}
-	In \textbf{batch systems}: relationship between variables \alert{changes during the batch}
+	In \textbf{batch systems}: relationship between variables \alert{changes during the batch}.  So the above approach is not appropriate.
 	\end{exampleblock}
 \end{frame}
 
@@ -44,14 +44,18 @@
 	\item Relationship between variables change within a batch 
 			\begin{itemize}
 				\item 	Entry and exit temperatures in a batch dryer correlate (move together) at the end of the batch. 
-				\item 	At start of the batch there is little relationship: heat used to evaporate moisture	
-			\end{itemize}\pause
+				\item 	But, at start of the batch there is little relationship: heat used to evaporate moisture	
+			\end{itemize}
 
+	\pause
 	
-	\item Past history of a batch affects future behaviour (``integrating system'')
+	\item Past history of a batch affects future behaviour: a batch is an ``integrating system''
 	
 			\begin{itemize}
-				\item 	Unfold batch data as shown above: cannot capture that ``past effect'' on future rows.  Why?
+				\item 	Unfolding batch data as shown previously won't capture that ``past effect'' on future rows.  Why?
+				
+				\pause
+				
 				\item  	Recall: each row is independent in PCA and PLS
 			\end{itemize}
 
