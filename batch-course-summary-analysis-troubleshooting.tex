@@ -21,7 +21,82 @@ General procedure to follow:
 				\item	Raw material suppler change over groupings?
 				
 				\item	Outliers? Usually we know which batches were bad.  We usually (always?) start to see bad batches in the scores.
+				
+				\item	Most informative: \( t_1 - t_2 \) and \( t_1 - t_3 \) and \( t_2 - t_3 \)
 			\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Summary: Data understanding and troubleshooting}
+	
+SPE plots:
+
+\begin{itemize}
+	\item	There are 2 types:
+	
+			\begin{itemize}
+				\item	overall (available at the end of the batch)
+				
+				\item	instantaneous (evolving, during the batch)
+			\end{itemize}
+			
+	\item	Contributions to SPE show \emph{which variables} had a changed relationship
+	
+	\item	and at \emph{what time} during the batch
+	
+	\item	Should always be verified in the raw data
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Summary: Data understanding and troubleshooting}
+	
+\begin{itemize}
+	\item	Loadings (PCA) and weights (PLS):
+	
+			\begin{itemize}
+				\item	shows \emph{which variables} and at \emph{what times} they dominate each latent variable
+				
+			\end{itemize}
+
+
+	\item 	\( R^2 \) plots
+		
+			\begin{itemize}
+				\item	interpreted in combination with loadings plot
+				
+				\item	common to see one latent variable dominating variance explained in a phase (e.g LV1 for phase 2 and LV1 in phase 3)
+				
+				\item	noisy tags: show low \( R^2  \) and small loadings in components at all times.  Good candidates for removal if:
+				 		
+						\begin{itemize}
+							\item	never used in any contributions, or to explain outliers
+							
+							\item	unrelated to explaining quality variables
+						\end{itemize}
+				
+				\item	large loading and high \( R^2 \): very important variable for that component
+			\end{itemize}
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Summary: Data understanding and troubleshooting}
+
+Removing observations:	
+\begin{itemize}
+	\item	Remove observations once contributions fully understood, especially if they distort score space
+	
+	\item	Can be tedious, but important to learn which batch problems are prevalent
+	
+	\item	Once removed, only common cause batches left:
+	
+			\begin{itemize}
+				\item	we will use that as reference database for monitoring!
+			\end{itemize}
+
 \end{itemize}
 
 \end{frame}

@@ -172,9 +172,9 @@ batchX = block(data.X(:, 4:9), 'X', 'batch', ...
 		\item	Contributions highest for the latex density and conversion, as expected.
 		
 				\begin{itemize}
-					\item	{\color{myGreen}{\texttt{{\color{myOrange}{\texttt{  contrib\_37 = contrib(batch\_PCA, 37)  }}}}}
+					\item	{\color{myOrange}{\texttt{  contrib\_37 = contrib(batch\_PCA, 37)  }}}
 					
-					\item	{\color{myGreen}{\texttt{{\color{myOrange}{\texttt{  plot(contrib\_37, 'scores', 1)		  }}}}}
+					\item	{\color{myOrange}{\texttt{  plot(contrib\_37, 'scores', 1)		  }}}
 				\end{itemize}
 	\end{itemize}
 \end{frame}
@@ -189,11 +189,31 @@ batchX = block(data.X(:, 4:9), 'X', 'batch', ...
 		\item	Confirmed our interpretation with the raw data
 				
 				\begin{itemize}
-					\item	{\color{myGreen}{\texttt{{\color{myOrange}{\texttt{  plot(batch\_PCA.X, 'highlight', 2, 3, 37)		  }}}}}
+					\item	{\color{myOrange}{\texttt{  plot(batch\_PCA.X, 'highlight', 2, 3, 37)		  }}}
 					
 					\item	uses a \( 2 \times 3 \) layout for the raw tags
 				\end{itemize}
 	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{SBR:  batch 34}
+	
+	\begin{itemize}		
+		\item	Let's investigate this together in the software
+		
+		\item	Main new learning: SPE trajectories
+		
+				\begin{itemize}
+					\item	SPE values also available during the batch, with limits
+					
+					\item	{\color{myOrange}{\texttt{  plot(batch_PCA, 'spe', {'batch', 34})		  }}}
+					
+				\end{itemize}
+	\end{itemize}
+				
+	\begin{center}
+		\includegraphics[width=\textwidth]{images/sbr/SBR-time-evolving-SPE-batch-34.png}
+	\end{center}
 \end{frame}
 
 
