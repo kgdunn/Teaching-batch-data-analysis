@@ -47,12 +47,12 @@
 					\item	\( R^2_X = [38.28\%, 17.58\%]\), or cumulatively: 55.9\%
 				\end{itemize}
 		
-		\item	Score plot: {\color{myOrange}{\texttt{plot(batch\_PCA, 'scores')  }}}
+		\item	Score plot: {\color{myOrange}{\texttt{plot(model, 'scores')  }}}
 				
 				\begin{columns}
 					\column{0.8\textwidth}
 						\begin{center}
-							\includegraphics[width=0.8\textwidth]{images/dupont/dupont-raw-score-plot.jpg}
+							\includegraphics[width=0.8\textwidth]{images/dupont/dupont-raw-score-plot.png}
 							% batch_PCA = lvm({'X', batch_X}, 2);
 							% plot(batch_PCA, 'scores', {'labels'})
 						\end{center}
@@ -71,7 +71,7 @@
 
 \begin{frame}\frametitle{DuPont Nylon example: SPE}
 	\begin{itemize}
-		\item	SPE plot: {\color{myOrange}{\texttt{plot(batch\_PCA, 'spe')  }}} 
+		\item	SPE plot: {\color{myOrange}{\texttt{plot(model, 'spe')  }}} 
 	\end{itemize}
 	
 	\begin{center}
@@ -84,7 +84,7 @@
 		\item	First plot loadings \( p_1 \) to understand that direction
 			
 				\begin{itemize}
-					\item	{\color{myOrange}{\texttt{plot(batch\_PCA.X, 'loadings', 1)    }}} 
+					\item	{\color{myOrange}{\texttt{plot(model.X, 'loadings', 1)    }}} 
 					
 					\item	Tags and time periods that are positive in \( p_1 \) will be high in batch 54
 					
@@ -121,13 +121,13 @@
 		\item	Batch 49 shows in the overall SPE 
 		
 		 		\begin{itemize}
-		 			\item	{\color{myOrange}{\texttt{plot(batch\_PCA, 'spe') }}} 
+		 			\item	{\color{myOrange}{\texttt{plot(model, 'spe') }}} 
 		 		\end{itemize}
 
 		\item 	Also look at the time-varying SPE to see \emph{when} problem occurred: \( t \) = 57 to 67 
 		
 				\begin{itemize}
-					\item	{\color{myOrange}{\texttt{plot(batch\_PCA, 'spe', \{'batch', 49\})  }}} 
+					\item	{\color{myOrange}{\texttt{plot(model, 'spe', \{'batch', 49\})  }}} 
 				\end{itemize}
 		
 		\item 	Confirm in contribution plots: tags 6 to 10
